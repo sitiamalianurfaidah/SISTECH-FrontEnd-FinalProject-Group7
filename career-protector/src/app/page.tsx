@@ -2,11 +2,13 @@
 
 import Head from 'next/head';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import '../styles/globals.css';
 
 const Home = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const router = useRouter();
 
   return (
     <>
@@ -49,6 +51,7 @@ const Home = () => {
 
             {/* Start Quiz Button */}
             <button
+              onClick={() => router.push('/quiz')}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               className={`mt-4 px-10 py-3 rounded-[10px] font-space-mono text-lg transition-all duration-300 ${

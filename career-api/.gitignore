@@ -1,0 +1,6 @@
+.env
+major_st.index
+*.kv
+*.npy
+*.pkl
+*.vec
