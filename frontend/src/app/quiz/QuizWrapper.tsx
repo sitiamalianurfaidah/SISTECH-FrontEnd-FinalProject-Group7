@@ -70,6 +70,7 @@ const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
 
             {currentPage === 3 && (
             <QuizPage3
+                allAnswers={answers}
                 answers={answers.slice(20, 30)}
                 onAnswer={(i, val) => handleSetAnswer(2, i, val)}
                 onBack={handleBack}

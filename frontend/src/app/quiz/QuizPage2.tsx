@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import RadioOption from '../../components/RadioOption';
 
 const dummyQuestions = [
@@ -55,13 +55,17 @@ interface QuizPage2Props {
     onBack: () => void;
 }
 
-const QuizPage2: React.FC<QuizPage2Props> = ({ answers, onAnswer, onNext, onBack }) => {
+const QuizPage2: React.FC<QuizPage2Props> = ({ answers, allAnswers, onAnswer, onNext, onBack }) => {
     const [showWarning, setShowWarning] = useState(false);
-
-    const answeredOnThisPage = answers.slice(10, 20).filter((a) => a !== null && a !== undefined).length;
+    
+    const answeredOnThisPage = answers.filter((a) => a !== null && a !== undefined).length;
     const allAnswered = answeredOnThisPage === 10;
-    const currentAnswered = answers.filter((a) => a !== null && a !== undefined).length;
+    const currentAnswered = allAnswers.filter((a) => a !== null && a !== undefined).length;
     const progressPercent = Math.round((currentAnswered / 30) * 100);
+    
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, []);
 
     return (
         <div className="bg-[#F5F7FA] text-black p-6 md:p-10 rounded-[32px] space-y-10">

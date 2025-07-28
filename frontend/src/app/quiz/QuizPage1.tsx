@@ -106,9 +106,13 @@ const QuizPage1: React.FC<QuizPage1Props> = ({ answers, onAnswer, onNext }) => {
                             : icons.unchecked
                         }
                         isSelected={String(answers[index]) === value}
-                        onClick={() =>
-                        onAnswer(index, parseInt(value))
-                        }
+                        onClick={() => {
+                        // toggle: jika dipilih ulang, hapus
+                        onAnswer(
+                            index,
+                            selectedValue === parseInt(value) ? null : parseInt(value)
+                        );
+                        }}
                         colorClass={isAnswered ? 'text-white' : 'text-black'}
                     />
                     ))}
