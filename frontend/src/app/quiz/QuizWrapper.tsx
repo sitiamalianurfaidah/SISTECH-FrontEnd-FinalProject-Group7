@@ -8,6 +8,7 @@ import QuizPage4 from "./QuizPage4";
 import QuizPage5 from "./QuizPage5";
 import QuizPage6 from "./QuizPage6";
 import QuizPage7 from "./QuizPage7"; // multiple choice page
+import { questionsPage7 } from "./QuizPage7";
 import Navbar from "@/components/Navbar";
 import { useRouter } from "next/navigation";
 
@@ -78,16 +79,36 @@ const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
     const handleSubmit = async () => {
         const scores = calculateRiasecScores();
 
+        const majorOptions = questionsPage7[0].options;
+        const interestOptions = questionsPage7[1].options;
+        const skillsOptions = questionsPage7[2].options;
+        const highSchoolAnswer = answers[63]?.[0];
+
+        const payload = {
+            in_highschool: highSchoolAnswer === 0,
+            major: answers[60]?.[0] !== undefined ? majorOptions[answers[60][0]] : "",
+            interests: answers[61]?.map((i) => interestOptions[i]).join(", ") || "",
+            skills: answers[62]?.map((i) => skillsOptions[i]).join(", ") || "",
+            r: scores["R"] || 0,
+            i: scores["I"] || 0,
+            a: scores["A"] || 0,
+            s: scores["S"] || 0,
+            e: scores["E"] || 0,
+            c: scores["C"] || 0,
+        };
+
         try {
         const apiUrl = process.env.NEXT_PUBLIC_API_URL;
         if (!apiUrl) {
             throw new Error("API URL is not defined in environment variables.");
         }
 
+        console.log("Payload yang dikirim:", payload);
+
         const res = await fetch(`${apiUrl}/recommend-careers`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(scores),
+            body: JSON.stringify(payload),
         });
 
         if (!res.ok) {

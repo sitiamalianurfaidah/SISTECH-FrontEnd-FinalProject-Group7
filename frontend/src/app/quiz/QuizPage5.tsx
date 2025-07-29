@@ -9,7 +9,7 @@ const questionsPage5 = [
     { id: 42, text: "Manage a retail store" },
     { id: 43, text: "Operate a beauty salon or barber shop" },
     { id: 44, text: "Manage a department within a large company" },
-    { id: 45, text: "Start your own businesst" },
+    { id: 45, text: "Start your own business" },
     { id: 46, text: "⁠Negotiate business contracts" },
     { id: 47, text: "⁠Represent a client in a lawsuit" },
     { id: 48, text: "⁠Market a new line of clothing" },

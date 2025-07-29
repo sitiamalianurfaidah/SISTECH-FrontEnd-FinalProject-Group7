@@ -3,9 +3,9 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 
-const questionsPage7 = [
+export const questionsPage7 = [
     {
-        id: 1,
+        id: 60,
         text: 'What is your current major?',
         options: [
         'Science / STEM (e.g., Biology, Physics, Mathematics)',
@@ -27,7 +27,7 @@ const questionsPage7 = [
         multiple: false,
     },
     {
-        id: 2,
+        id: 61,
         text: 'Which areas or fields are you most interested in exploring?',
         options: [
         'Creative fields (film, art, design, music, etc.)',
@@ -45,7 +45,7 @@ const questionsPage7 = [
         multiple: false,
     },
     {
-        id: 3,
+        id: 62,
         text: 'What skills or abilities do you feel you have?',
         options: [
         'Communication (presenting, public speaking, writing)',
@@ -67,7 +67,7 @@ const questionsPage7 = [
         multiple: true, // ini multiple
     },
     {
-        id: 4,
+        id: 63,
         text: 'Are you currently in college or university?',
         options: ['Yes', 'No'],
         multiple: false,
