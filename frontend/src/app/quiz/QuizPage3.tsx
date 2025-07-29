@@ -130,12 +130,12 @@ const QuizPage3: React.FC<QuizPage3Props> = ({
         </div>
 
         {/* Buttons */}
-        <div className="flex justify-between items-center pt-6">
+        <div className="flex justify-between items-center pt-0">
             <button
             onClick={onBack}
-            className="bg-transparent border border-gray-400 text-gray-800 px-6 py-3 rounded-[10px] text-lg font-semibold transition duration-300 hover:bg-gray-100"
+            className="bg-transparent border-5 border-[#FFD000] text-gray-800 px-15 py-2 rounded-[10px] text-lg font-semibold transition duration-300 hover:bg-[#FFD000]"
             >
-            ← Back
+            Back
             </button>
 
             <div className="flex flex-col items-end space-y-2">
@@ -154,7 +154,7 @@ const QuizPage3: React.FC<QuizPage3Props> = ({
                 }
                 }}
                 disabled={!allAnswered}
-                className={`px-6 py-3 rounded-[10px] text-lg font-semibold transition duration-300 ${
+                className={`px-15 py-2 rounded-[10px] text-lg font-semibold transition duration-300 ${
                 allAnswered
                     ? 'bg-[#FFD000] hover:brightness-110 text-[#161616]'
                     : 'bg-gray-400 text-white cursor-not-allowed'

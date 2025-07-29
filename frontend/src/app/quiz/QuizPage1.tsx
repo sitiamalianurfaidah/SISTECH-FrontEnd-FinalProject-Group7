@@ -117,18 +117,18 @@ const QuizPage1: React.FC<QuizPage1Props> = ({ answers, allAnswers, onAnswer, on
         </div>
 
         {/* Tombol Next */}
-        <div className="flex justify-end pt-6">
+        <div className="flex justify-center pt-0">
             <button
             onClick={onNext}
             disabled={!allAnswered}
-            className={`px-6 py-3 rounded-[10px] text-lg font-semibold transition duration-300
+            className={`px-15 py-2 rounded-[10px] text-lg font-semibold transition duration-300 
                 ${
                 allAnswered
                     ? 'bg-[#FFD000] hover:brightness-110 text-[#161616]'
                     : 'bg-gray-400 text-white cursor-not-allowed'
                 }`}
             >
-            Next →
+            Next
             </button>
         </div>
         </div>
