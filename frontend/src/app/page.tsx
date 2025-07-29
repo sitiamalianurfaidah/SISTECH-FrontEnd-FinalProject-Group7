@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import '../styles/globals.css';
+import Navbar from '@/components/Navbar'; 
 
 const Home = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -17,11 +18,9 @@ const Home = () => {
         <title>Discover Your Ideal Career</title>
       </Head>
       {/* Background utama putih */}
-      <div className="h-screen bg-[#F5F7FA] text-white flex flex-col justify-center items-center">
+      <div className="h-screen bg-[#F5F7FA] text-white">
         {/* Navbar */}
-        <nav className="w-full px-8 py-6 flex justify-between items-center">
-          <Image src="/pathmatch-logo.svg" alt="PathMatch Logo" width={150} height={30} />
-        </nav>
+        <Navbar />
 
         {/* Card biru */}
         <div className="relative z-10 max-w-6xl mx-auto bg-[#003E85] rounded-[70px] pt-5 md:pt-10 pb-0 overflow-hidden">

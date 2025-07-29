@@ -4,7 +4,7 @@ import React, { FC, useState } from "react";
 import QuizPage1 from "./QuizPage1";
 import QuizPage2 from "./QuizPage2";
 import QuizPage3 from "./QuizPage3";
-import Image from "next/image";
+import Navbar from '@/components/Navbar'; 
 
 // Define consistent answer type
 export type AnswerType = number[] | null;
@@ -46,16 +46,8 @@ const handleSubmit = () => {
     };
 
 return (
-    <div className="min-h-screen bg-[#F5F7FA] py-10 px-4">
-        <nav className="w-full px-8 py-6 flex justify-between items-center">
-            <Image
-            src="/pathmatch-logo.svg"
-            alt="PathMatch Logo"
-            width={150}
-            height={30}
-            />
-        </nav>
-
+    <div className="min-h-screen bg-[#F5F7FA]">
+        <Navbar />
         <div className="max-w-3xl mx-auto">
             {currentPage === 1 && (
             <QuizPage1

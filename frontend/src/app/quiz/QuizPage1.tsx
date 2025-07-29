@@ -25,6 +25,15 @@ const svgPaths = {
     '5': { unchecked: '/radio-unchecked-green-dark.svg', checked: '/radio-checked-green-dark.svg' },
 };
 
+
+const optionLabels = {
+    '1': 'Strongly Disagree',
+    '2': 'Disagree',
+    '3': 'Neutral',
+    '4': 'Agree',
+    '5': 'Strongly Agree',
+};
+
 interface QuizPage1Props {
     answers: AnswerType[];
     allAnswers: AnswerType[];
@@ -42,7 +51,7 @@ const QuizPage1: React.FC<QuizPage1Props> = ({ answers, allAnswers, onAnswer, on
     }, []);
 
     return (
-        <div className="bg-[#F5F7FA] text-black p-6 md:p-10 rounded-[32px] space-y-10">
+        <div className="bg-[#F5F7FA] text-black p-6 md:p-3 rounded-[32px] space-y-10">
         {/* Petunjuk dan Progress */}
         <div className="text-center space-y-4">
             <p className="text-base md:text-lg text-gray-700">
@@ -54,7 +63,7 @@ const QuizPage1: React.FC<QuizPage1Props> = ({ answers, allAnswers, onAnswer, on
             {Object.entries(svgPaths).map(([value, icons]) => (
                 <RadioOption
                 key={value}
-                label={value}
+                label={optionLabels[value as keyof typeof optionLabels]}
                 svgSrc={icons.unchecked}
                 isSelected={false}
                 onClick={() => {}}

@@ -60,14 +60,14 @@ const QuizPage3: React.FC<QuizPage3Props> = ({
     }, []);
 
     return (
-        <div className="bg-[#F5F7FA] text-black p-6 md:p-10 rounded-[32px] space-y-10">
+        <div className="bg-[#F5F7FA] text-black p-6 md:p-3 rounded-[32px] space-y-10">
         {/* Progress Bar */}
         <div className="w-full max-w-md mx-auto">
-            <div className="flex justify-between text-sm text-gray-600 mt-2">
+            <div className="flex justify-between text-sm text-gray-600 mt-0">
             <span>Halaman 3 dari 3</span>
             <span>{progressPercent}%</span>
             </div>
-            <div className="w-full bg-gray-200 rounded-full h-3 mt-1">
+            <div className="w-full bg-gray-200 rounded-full h-3 mt-2">
             <div
                 className="bg-[#FFD000] h-3 rounded-full transition-all duration-500"
                 style={{ width: `${progressPercent}%` }}
@@ -99,7 +99,7 @@ const QuizPage3: React.FC<QuizPage3Props> = ({
                     <Image src={arrowIcon} alt="Toggle" width={20} height={20} />
                 </div>
                 <div
-                className={`transition-all duration-500 overflow-hidden mt-0 space-y-2 ${
+                className={`transition-all duration-500 overflow-hidden mt-2 space-y-2 ${
                     isOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
                 }`}
                 >
@@ -133,7 +133,7 @@ const QuizPage3: React.FC<QuizPage3Props> = ({
         <div className="flex justify-between items-center pt-0">
             <button
             onClick={onBack}
-            className="bg-transparent border-5 border-[#FFD000] text-gray-800 px-15 py-2 rounded-[10px] text-lg font-semibold transition duration-300 hover:bg-[#FFD000]"
+            className="bg-transparent border-5 border-[#FFD000] text-gray-800 px-15 py-1 rounded-[10px] text-lg font-semibold transition duration-300 hover:bg-[#FFD000]"
             >
             Back
             </button>

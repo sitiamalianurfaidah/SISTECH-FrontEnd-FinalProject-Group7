@@ -54,7 +54,7 @@ const QuizPage2: React.FC<QuizPage2Props> = ({ answers, allAnswers, onAnswer, on
     }, []);
 
     return (
-        <div className="bg-[#F5F7FA] text-black p-6 md:p-10 rounded-[32px] space-y-10">
+        <div className="bg-[#F5F7FA] text-black p-6 md:p-3 rounded-[32px] space-y-10">
         {/* Header & Progress */}
         <div className="text-center space-y-4">
             <p className="text-base md:text-lg text-gray-700">
@@ -131,7 +131,7 @@ const QuizPage2: React.FC<QuizPage2Props> = ({ answers, allAnswers, onAnswer, on
         <div className="flex justify-between items-center pt-0">
             <button
             onClick={onBack}
-            className="bg-transparent border-5 border-[#FFD000] text-gray-800 px-15 py-2 rounded-[10px] text-lg font-semibold transition duration-300 hover:bg-[#FFD000]"
+            className="bg-transparent border-5 border-[#FFD000] text-gray-800 px-15 py-1 rounded-[10px] text-lg font-semibold transition duration-300 hover:bg-[#FFD000]"
             >
             Back
             </button>
