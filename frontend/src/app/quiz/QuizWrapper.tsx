@@ -84,11 +84,27 @@ const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
         const skillsOptions = questionsPage7[2].options;
         const highSchoolAnswer = answers[63]?.[0];
 
+        const majorIndex = answers[60]?.[0];
+        const major = majorIndex !== undefined && majorIndex < majorOptions.length
+            ? majorOptions[majorIndex]
+            : "";
+
+        const interests = (answers[61] || [])
+            .filter((i) => i < interestOptions.length)
+            .map((i) => interestOptions[i])
+            .join(", ");
+
+        const skills = (answers[62] || [])
+            .filter((i) => i < skillsOptions.length)
+            .map((i) => skillsOptions[i])
+            .join(", ");
+
         const payload = {
+            request_id: Date.now(),
             in_highschool: highSchoolAnswer === 0,
-            major: answers[60]?.[0] !== undefined ? majorOptions[answers[60][0]] : "",
-            interests: answers[61]?.map((i) => interestOptions[i]).join(", ") || "",
-            skills: answers[62]?.map((i) => skillsOptions[i]).join(", ") || "",
+            major,
+            interests,
+            skills,
             r: scores["R"] || 0,
             i: scores["I"] || 0,
             a: scores["A"] || 0,

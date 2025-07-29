@@ -60,6 +60,8 @@ programs_data, programs_index = dp.process_data(input_path=MAJOR_JSON_PATH, outp
 
 @app.post("/recommend-careers")
 def recommend_careers(query: CareerQuery):
+    print("== PAYLOAD DITERIMA ==")
+    print(query)
     results = rec.recommend_careers(
         data=careers_data,
         model=model,

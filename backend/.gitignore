@@ -4,3 +4,4 @@ major_st.index
 *.npy
 *.pkl
 *.vec
+node_modules/
