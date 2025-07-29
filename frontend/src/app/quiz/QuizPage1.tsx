@@ -1,7 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import RadioOption from '../../components/RadioOption';
+import { AnswerType } from './QuizWrapper'; // sesuaikan path-nya kalau beda
 
 const dummyQuestions = [
     { id: 1, text: 'Saya merasa percaya diri dalam mengambil keputusan penting.' },
@@ -24,28 +25,24 @@ const svgPaths = {
     '5': { unchecked: '/radio-unchecked-green-dark.svg', checked: '/radio-checked-green-dark.svg' },
 };
 
-const optionLabels = {
-    '1': 'Strongly Disagree',
-    '2': 'Disagree',
-    '3': 'Neutral',
-    '4': 'Agree',
-    '5': 'Strongly Agree',
-};
-
 interface QuizPage1Props {
-    answers: (string | number | null)[];
-    onAnswer: (index: number, value: string | number | null) => void;
+    answers: AnswerType[];
+    allAnswers: AnswerType[];
+    onAnswer: (index: number, value: AnswerType) => void;
     onNext: () => void;
 }
 
-const QuizPage1: React.FC<QuizPage1Props> = ({ answers, onAnswer, onNext }) => {
-    const currentAnswered = answers.filter((a) => a !== null && a !== undefined).length;
-    const progressPercent = Math.round((currentAnswered / 30) * 100); // total 30 dari semua page
-    const allAnswered = answers.every((a) => a !== null && a !== undefined);
+const QuizPage1: React.FC<QuizPage1Props> = ({ answers, allAnswers, onAnswer, onNext }) => {
+    const currentAnswered = allAnswers.filter((a) => Array.isArray(a) ? a.length > 0 : a !== null).length;
+    const progressPercent = Math.round((currentAnswered / 30) * 100);
+    const allAnswered = answers.every((a) => Array.isArray(a) && a.length > 0);
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, []);
 
     return (
         <div className="bg-[#F5F7FA] text-black p-6 md:p-10 rounded-[32px] space-y-10">
-
         {/* Petunjuk dan Progress */}
         <div className="text-center space-y-4">
             <p className="text-base md:text-lg text-gray-700">
@@ -57,7 +54,7 @@ const QuizPage1: React.FC<QuizPage1Props> = ({ answers, onAnswer, onNext }) => {
             {Object.entries(svgPaths).map(([value, icons]) => (
                 <RadioOption
                 key={value}
-                label={optionLabels[value as keyof typeof optionLabels]}
+                label={value}
                 svgSrc={icons.unchecked}
                 isSelected={false}
                 onClick={() => {}}
@@ -84,38 +81,35 @@ const QuizPage1: React.FC<QuizPage1Props> = ({ answers, onAnswer, onNext }) => {
         {/* Pertanyaan */}
         <div className="space-y-6">
             {dummyQuestions.map((q, index) => {
-            const selectedValue = answers[index];
-            const isAnswered = selectedValue !== null && selectedValue !== undefined;
+            const selected = answers[index] || null;
+            const selectedValue = Array.isArray(selected) ? selected[0] : null;
 
             return (
                 <div
                 key={q.id}
                 className={`rounded-xl p-6 transition-colors text-center ${
-                    isAnswered ? 'bg-[#003E85] text-white' : 'bg-[#F5F7FA] shadow-sm'
+                    selectedValue !== null ? 'bg-[#003E85] text-white' : 'bg-[#F5F7FA] shadow-sm'
                 }`}
                 >
                 <p className="mb-4 font-semibold">{q.text}</p>
                 <div className="flex justify-between gap-2 flex-wrap sm:flex-nowrap">
-                    {Object.entries(svgPaths).map(([value, icons]) => (
-                    <RadioOption
+                    {Object.entries(svgPaths).map(([value, icons]) => {
+                    const numericVal = parseInt(value);
+                    const isSelected = selectedValue === numericVal;
+
+                    return (
+                        <RadioOption
                         key={value}
                         label=""
-                        svgSrc={
-                        String(answers[index]) === value
-                            ? icons.checked
-                            : icons.unchecked
-                        }
-                        isSelected={String(answers[index]) === value}
+                        svgSrc={isSelected ? icons.checked : icons.unchecked}
+                        isSelected={isSelected}
                         onClick={() => {
-                        // toggle: jika dipilih ulang, hapus
-                        onAnswer(
-                            index,
-                            selectedValue === parseInt(value) ? null : parseInt(value)
-                        );
+                            onAnswer(index, isSelected ? null : [numericVal]);
                         }}
-                        colorClass={isAnswered ? 'text-white' : 'text-black'}
-                    />
-                    ))}
+                        colorClass={isSelected ? 'text-white' : 'text-black'}
+                        />
+                    );
+                    })}
                 </div>
                 </div>
             );

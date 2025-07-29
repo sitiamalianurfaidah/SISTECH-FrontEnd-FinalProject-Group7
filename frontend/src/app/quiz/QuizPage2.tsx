@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import RadioOption from '../../components/RadioOption';
+import { AnswerType } from './QuizWrapper'; // Pastikan path ini sesuai
 
 const dummyQuestions = [
     { id: 11, text: 'Saya suka mencoba hal-hal baru yang menantang.' },
@@ -17,26 +18,11 @@ const dummyQuestions = [
 ];
 
 const svgPaths = {
-    '1': {
-        unchecked: '/radio-unchecked-red.svg',
-        checked: '/radio-checked-red.svg',
-    },
-    '2': {
-        unchecked: '/radio-unchecked-yellow.svg',
-        checked: '/radio-checked-yellow.svg',
-    },
-    '3': {
-        unchecked: '/radio-unchecked-gray.svg',
-        checked: '/radio-checked-gray.svg',
-    },
-    '4': {
-        unchecked: '/radio-unchecked-green-light.svg',
-        checked: '/radio-checked-green-light.svg',
-    },
-    '5': {
-        unchecked: '/radio-unchecked-green-dark.svg',
-        checked: '/radio-checked-green-dark.svg',
-    },
+    '1': { unchecked: '/radio-unchecked-red.svg', checked: '/radio-checked-red.svg' },
+    '2': { unchecked: '/radio-unchecked-yellow.svg', checked: '/radio-checked-yellow.svg' },
+    '3': { unchecked: '/radio-unchecked-gray.svg', checked: '/radio-checked-gray.svg' },
+    '4': { unchecked: '/radio-unchecked-green-light.svg', checked: '/radio-checked-green-light.svg' },
+    '5': { unchecked: '/radio-unchecked-green-dark.svg', checked: '/radio-checked-green-dark.svg' },
 };
 
 const optionLabels = {
@@ -48,28 +34,27 @@ const optionLabels = {
 };
 
 interface QuizPage2Props {
-    answers: (string | number | null)[];
-    allAnswers: (string | number | null)[];
-    onAnswer: (index: number, value: string | number | null) => void;
+    answers: AnswerType[];
+    allAnswers: AnswerType[];
+    onAnswer: (index: number, value: AnswerType) => void;
     onNext: () => void;
     onBack: () => void;
 }
 
 const QuizPage2: React.FC<QuizPage2Props> = ({ answers, allAnswers, onAnswer, onNext, onBack }) => {
     const [showWarning, setShowWarning] = useState(false);
-    
-    const answeredOnThisPage = answers.filter((a) => a !== null && a !== undefined).length;
+
+    const answeredOnThisPage = answers.filter((a) => Array.isArray(a) && a.length > 0).length;
     const allAnswered = answeredOnThisPage === 10;
-    const currentAnswered = allAnswers.filter((a) => a !== null && a !== undefined).length;
+    const currentAnswered = allAnswers.filter((a) => Array.isArray(a) && a.length > 0).length;
     const progressPercent = Math.round((currentAnswered / 30) * 100);
-    
+
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, []);
 
     return (
         <div className="bg-[#F5F7FA] text-black p-6 md:p-10 rounded-[32px] space-y-10">
-
         {/* Header & Progress */}
         <div className="text-center space-y-4">
             <p className="text-base md:text-lg text-gray-700">
@@ -106,8 +91,9 @@ const QuizPage2: React.FC<QuizPage2Props> = ({ answers, allAnswers, onAnswer, on
         {/* Soal */}
         <div className="space-y-6">
             {dummyQuestions.map((q, i) => {
-            const selectedValue = answers[i];
-            const isAnswered = selectedValue !== null && selectedValue !== undefined;
+            const selected = answers[i];
+            const selectedValue = Array.isArray(selected) ? selected[0] : null;
+            const isAnswered = selectedValue !== null;
 
             return (
                 <div
@@ -118,22 +104,23 @@ const QuizPage2: React.FC<QuizPage2Props> = ({ answers, allAnswers, onAnswer, on
                 >
                 <p className="mb-4 font-semibold">{q.text}</p>
                 <div className="flex justify-between gap-2 flex-wrap sm:flex-nowrap">
-                    {Object.entries(svgPaths).map(([value, icons]) => (
-                    <RadioOption
+                    {Object.entries(svgPaths).map(([value, icons]) => {
+                    const numericVal = parseInt(value);
+                    const isSelected = selectedValue === numericVal;
+
+                    return (
+                        <RadioOption
                         key={value}
                         label=""
-                        svgSrc={String(selectedValue) === value ? icons.checked : icons.unchecked}
-                        isSelected={String(selectedValue) === value}
-                        onClick={() => {
-                        // toggle: jika dipilih ulang, hapus
-                        onAnswer(
-                            i,
-                            selectedValue === parseInt(value) ? null : parseInt(value)
-                        );
-                        }}
-                        colorClass={isAnswered ? 'text-white' : 'text-black'}
-                    />
-                    ))}
+                        svgSrc={isSelected ? icons.checked : icons.unchecked}
+                        isSelected={isSelected}
+                        onClick={() =>
+                            onAnswer(i, isSelected ? null : [numericVal])
+                        }
+                        colorClass={isSelected ? 'text-white' : 'text-black'}
+                        />
+                    );
+                    })}
                 </div>
                 </div>
             );

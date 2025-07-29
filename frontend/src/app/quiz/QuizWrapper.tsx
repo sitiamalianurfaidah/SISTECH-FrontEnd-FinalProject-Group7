@@ -1,23 +1,26 @@
 "use client";
 
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import QuizPage1 from "./QuizPage1";
 import QuizPage2 from "./QuizPage2";
 import QuizPage3 from "./QuizPage3";
 import Image from "next/image";
 
+// Define consistent answer type
+export type AnswerType = number[] | null;
+
 interface QuizWrapperProps {
-    answers: (string | number | null)[];
-    setAnswers: React.Dispatch<React.SetStateAction<(number | string | null)[]>>;
-}
+    answers: AnswerType[];
+    setAnswers: React.Dispatch<React.SetStateAction<AnswerType[]>>;
+    }
 
 const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
-    const [currentPage, setCurrentPage] = React.useState(1);
+    const [currentPage, setCurrentPage] = useState(1);
 
-    const handleSetAnswer = (
-        pageIndex: number, // 0, 1, 2
-        questionIndex: number, // 0-9
-        value: number | string | null
+const handleSetAnswer = (
+    pageIndex: number,
+    questionIndex: number,
+    value: AnswerType
     ) => {
         const globalIndex = pageIndex * 10 + questionIndex;
         const updatedAnswers = [...answers];
@@ -25,33 +28,38 @@ const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
         setAnswers(updatedAnswers);
     };
 
-    const handleNext = () => {
+const handleNext = () => {
         if (currentPage < 3) {
-        setCurrentPage(currentPage + 1);
+        setCurrentPage((prev) => prev + 1);
         }
     };
 
-    const handleBack = () => {
+const handleBack = () => {
         if (currentPage > 1) {
-        setCurrentPage(currentPage - 1);
+        setCurrentPage((prev) => prev - 1);
         }
     };
 
-    const handleSubmit = () => {
-        const allAnswers = answers;
-        console.log("Submitted Answers:", allAnswers);
-        // TODO: kirim ke backend
+const handleSubmit = () => {
+        console.log("Submitted Answers:", answers);
+        // TODO: Kirim ke backend di sini
     };
 
-    return (
-        <div className="min-h-screen bg-[#F5F7FA] py-10 px-4">
+return (
+    <div className="min-h-screen bg-[#F5F7FA] py-10 px-4">
         <nav className="w-full px-8 py-6 flex justify-between items-center">
-            <Image src="/pathmatch-logo.svg" alt="PathMatch Logo" width={150} height={30} />
+            <Image
+            src="/pathmatch-logo.svg"
+            alt="PathMatch Logo"
+            width={150}
+            height={30}
+            />
         </nav>
 
         <div className="max-w-3xl mx-auto">
             {currentPage === 1 && (
             <QuizPage1
+                allAnswers={answers}
                 answers={answers.slice(0, 10)}
                 onAnswer={(i, val) => handleSetAnswer(0, i, val)}
                 onNext={handleNext}
