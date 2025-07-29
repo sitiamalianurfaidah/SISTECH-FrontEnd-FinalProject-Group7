@@ -43,7 +43,7 @@ interface QuizPage1Props {
 
 const QuizPage1: React.FC<QuizPage1Props> = ({ answers, allAnswers, onAnswer, onNext }) => {
     const answeredSkala = allAnswers.slice(0, 60).filter((a) => Array.isArray(a) && a.length > 0).length;
-    const progressPercent = Math.round((answeredSkala / 60) * 100);
+    const progressPercent = Math.round((answeredSkala / 64) * 100);
     const allAnswered = answers.every((a) => Array.isArray(a) && a.length > 0);
 
     useEffect(() => {
@@ -75,7 +75,7 @@ const QuizPage1: React.FC<QuizPage1Props> = ({ answers, allAnswers, onAnswer, on
             {/* Progress Bar */}
             <div className="w-full max-w-md mx-auto">
             <div className="flex justify-between text-sm text-gray-600 mt-2">
-                <span>Page 1 of 6</span>
+                <span>Page 1 of 7</span>
                 <span>{progressPercent}%</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-3 mt-1">

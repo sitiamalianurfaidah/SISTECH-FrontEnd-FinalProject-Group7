@@ -47,7 +47,7 @@ const QuizPage6: React.FC<QuizPage6Props> = ({ answers, allAnswers, onAnswer, on
     const answeredOnThisPage = answers.filter((a) => Array.isArray(a) && a.length > 0).length;
     const allAnswered = answeredOnThisPage === 10;
     const currentAnswered = allAnswers.filter((a) => Array.isArray(a) && a.length > 0).length;
-    const progressPercent = Math.round((currentAnswered / 60) * 100); // Updated to 60
+    const progressPercent = Math.round((currentAnswered / 64) * 100); // Updated to 60
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -76,7 +76,7 @@ const QuizPage6: React.FC<QuizPage6Props> = ({ answers, allAnswers, onAnswer, on
 
                 <div className="w-full max-w-md mx-auto">
                     <div className="flex justify-between text-sm text-gray-600 mt-2">
-                        <span>Page 6 of 6</span>
+                        <span>Page 6 of 7</span>
                         <span>{progressPercent}%</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-3 mt-1">

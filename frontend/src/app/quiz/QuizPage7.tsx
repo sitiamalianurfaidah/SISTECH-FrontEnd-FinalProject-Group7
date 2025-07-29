@@ -3,18 +3,76 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 
-const dummyQuestions = [
-    { id: 21, text: 'Bidang pekerjaan yang paling menarik bagi saya' },
-    { id: 22, text: 'Topik yang sering saya cari atau baca' },
-    { id: 23, text: 'Aktivitas favorit saat waktu luang' },
-    { id: 24, text: 'Jenis tugas yang paling membuat saya antusias' },
-    { id: 25, text: 'Lingkungan kerja ideal bagi saya' },
-    { id: 26, text: 'Cara saya menyelesaikan masalah yang kompleks' },
-    { id: 27, text: 'Saya merasa puas ketika' },
-    { id: 28, text: 'Peran yang sering saya ambil dalam tim' },
-    { id: 29, text: 'Saya lebih suka belajar melalui' },
-    { id: 30, text: 'Saya merasa paling produktif saat' },
-];
+const questionsPage7 = [
+    {
+        id: 1,
+        text: 'What is your current major?',
+        options: [
+        'Science / STEM (e.g., Biology, Physics, Mathematics)',
+        'Social Sciences / Humanities (e.g., Sociology, History, Philosophy)',
+        'Language & Literature (e.g., English, Linguistics, etc.)',
+        'Arts & Design (e.g., Visual Arts, DKV, Music, etc.)',
+        'Business & Management (e.g., Marketing, Accounting, Finance)',
+        'Engineering & Technology (e.g., Mechanical, Civil, Informatics)',
+        'Health & Medicine (e.g., Nursing, Pharmacy, Public Health)',
+        'Education (e.g., Teaching, Guidance Counseling)',
+        'Law & Political Science',
+        'Computer Science / Information Systems',
+        'Psychology',
+        'Agriculture, Forestry, or Marine Sciences',
+        'Tourism, Hospitality, or Culinary',
+        'Actuarial science',
+        'Other',
+        ],
+        multiple: false,
+    },
+    {
+        id: 2,
+        text: 'Which areas or fields are you most interested in exploring?',
+        options: [
+        'Creative fields (film, art, design, music, etc.)',
+        'Technology (AI, coding, software, etc.)',
+        'Business & finance (startups, marketing, investing, etc.)',
+        'Science & research (biology, chemistry, environment, space, etc.)',
+        'Social & humanitarian fields (psychology, education, advocacy, etc.)',
+        'Practical & technical work (automotive, construction, field work, etc.)',
+        'Healthcare (medicine, pharmacy, therapy, etc.)',
+        'Communication (public speaking, writing, media, etc.)',
+        'Nature & animals (agriculture, marine life, conservation, etc.)',
+        'Not sure yet / Still exploring',
+        'Other',
+        ],
+        multiple: false,
+    },
+    {
+        id: 3,
+        text: 'What skills or abilities do you feel you have?',
+        options: [
+        'Communication (presenting, public speaking, writing)',
+        'Creativity (design, illustration, content creation, new ideas)',
+        'Logic & problem-solving',
+        'Data or number analysis',
+        'Leadership & team management',
+        'Organization & time management',
+        'Technology or programming skills',
+        'Social / interpersonal skills (teamwork, empathy, listening)',
+        'Practical skills (engineering, automotive, hands-on work)',
+        'Foreign languages',
+        'Cooking or making food products',
+        'Research or deep observation',
+        'Customer service or sales',
+        'I’m not sure yet / Still figuring it out',
+        'Other',
+        ],
+        multiple: true, // ini multiple
+    },
+    {
+        id: 4,
+        text: 'Are you currently in college or university?',
+        options: ['Yes', 'No'],
+        multiple: false,
+    },
+    ];
 
 interface QuizPage7Props {
     answers: (number[] | null)[];
@@ -32,27 +90,36 @@ const QuizPage7: React.FC<QuizPage7Props> = ({
     onBack,
     }) => {
     const [showWarning, setShowWarning] = useState(false);
-
     const [openIndex, setOpenIndex] = useState<number | null>(null);
+
     const toggleDropdown = (index: number) => {
         setOpenIndex((prev) => (prev === index ? null : index));
     };
 
-    const handleSelect = (qIndex: number, val: number) => {
+    const handleSelect = (qIndex: number, val: number, multiple: boolean) => {
         const current = answers[qIndex] || [];
         const exists = current.includes(val);
+        let updated: number[] = [];
 
-        const updated = exists
-        ? current.filter((v) => v !== val)
-        : [...current, val];
+        if (multiple) {
+        updated = exists
+            ? current.filter((v) => v !== val)
+            : current.length < 3
+            ? [...current, val]
+            : current;
+        } else {
+        updated = [val];
+        }
 
         onAnswer(qIndex, updated.length > 0 ? updated : null);
     };
 
-    const answeredOnThisPage = answers.filter((a) => a && a.length > 0).length;
-    const allAnswered = answeredOnThisPage === 10;
-    const currentAnswered = allAnswers.filter((a) =>Array.isArray(a) ? a.length > 0 : a !== null).length;
-    const progressPercent = Math.round((currentAnswered / 30) * 100);
+    const allAnswered = answers.filter((a, i) =>
+        questionsPage7[i].multiple ? a && a.length > 0 : a !== null
+    ).length === questionsPage7.length;
+
+    const totalAnswered = allAnswers.filter((a) => a && a.length > 0).length;
+    const progressPercent = Math.round((totalAnswered / 64) * 100); // total 64 (60 + 4)
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -60,27 +127,28 @@ const QuizPage7: React.FC<QuizPage7Props> = ({
 
     return (
         <div className="bg-[#F5F7FA] text-black p-6 md:p-3 rounded-[32px] space-y-10">
-        {/* Progress Bar */}
-        <div className="w-full max-w-md mx-auto">
-            <div className="flex justify-between text-sm text-gray-600 mt-0">
-            <span>Halaman 3 dari 3</span>
-            <span>{progressPercent}%</span>
+        {/* Header & Progress */}
+        <div className="text-center space-y-4">
+            <div className="w-full max-w-md mx-auto">
+            <div className="flex justify-between text-sm text-gray-600 mt-2">
+                <span>Page 7 of 7</span>
+                <span>{progressPercent}%</span>
             </div>
-            <div className="w-full bg-gray-200 rounded-full h-3 mt-2">
-            <div
+            <div className="w-full bg-gray-200 rounded-full h-3 mt-1">
+                <div
                 className="bg-[#FFD000] h-3 rounded-full transition-all duration-500"
                 style={{ width: `${progressPercent}%` }}
-            />
+                />
+            </div>
             </div>
         </div>
 
         {/* Questions */}
         <div className="space-y-6">
-            {dummyQuestions.map((q, i) => {
+            {questionsPage7.map((q, i) => {
             const selectedValues = answers[i] || [];
             const isAnswered = selectedValues.length > 0;
             const isOpen = openIndex === i;
-
             const arrowIcon = `/arrow-${isOpen ? 'up' : 'down'}-${isAnswered ? 'white' : 'black'}.svg`;
 
             return (
@@ -98,30 +166,30 @@ const QuizPage7: React.FC<QuizPage7Props> = ({
                     <Image src={arrowIcon} alt="Toggle" width={20} height={20} />
                 </div>
                 <div
-                className={`transition-all duration-500 overflow-hidden mt-2 space-y-2 ${
+                    className={`transition-all duration-500 overflow-hidden mt-2 space-y-2 ${
                     isOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
-                }`}
+                    }`}
                 >
-                {Array.from({ length: 7 }).map((_, idx) => {
+                    {q.options.map((option, idx) => {
                     const isSelected = selectedValues.includes(idx);
                     return (
-                    <button
+                        <button
                         key={idx}
-                        onClick={() => handleSelect(i, idx)}
+                        onClick={() => handleSelect(i, idx, q.multiple)}
                         className={`w-full flex items-center gap-3 px-4 py-2 rounded-md transition-all ${
-                        isSelected ? 'bg-[#003E85] text-white' : 'bg-gray-100 text-black'
+                            isSelected ? 'bg-[#003E85] text-white' : 'bg-gray-100 text-black'
                         }`}
-                    >
+                        >
                         <Image
-                        src={`/${isSelected ? 'radio-checked' : 'radio-unchecked'}.svg`}
-                        alt="radio"
-                        width={16}
-                        height={16}
+                            src={`/${isSelected ? 'radio-checked' : 'radio-unchecked'}.svg`}
+                            alt="radio"
+                            width={16}
+                            height={16}
                         />
-                        <span>Choice {idx + 1}</span>
-                    </button>
+                        <span>{option}</span>
+                        </button>
                     );
-                })}
+                    })}
                 </div>
                 </div>
             );
