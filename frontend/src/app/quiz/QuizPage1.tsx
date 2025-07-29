@@ -1,37 +1,37 @@
-'use client';
+"use client";
 
-import React, { useEffect } from 'react';
-import RadioOption from '../../components/RadioOption';
-import { AnswerType } from './QuizWrapper'; // sesuaikan path-nya kalau beda
+import React, { useEffect } from "react";
+import RadioOption from "../../components/RadioOption";
+import { AnswerType } from "./QuizWrapper";
 
-const dummyQuestions = [
-    { id: 1, text: 'Saya merasa percaya diri dalam mengambil keputusan penting.' },
-    { id: 2, text: 'Saya nyaman bekerja dalam kelompok.' },
-    { id: 3, text: 'Saya memiliki tujuan karier yang jelas.' },
-    { id: 4, text: 'Saya dapat mengatur waktu dengan baik.' },
-    { id: 5, text: 'Saya mampu mengatasi tekanan dengan efektif.' },
-    { id: 6, text: 'Saya memahami minat dan bakat saya.' },
-    { id: 7, text: 'Saya mudah mempelajari hal baru.' },
-    { id: 8, text: 'Saya suka mengeksplorasi bidang pekerjaan.' },
-    { id: 9, text: 'Saya yakin dengan pilihan jurusan saya.' },
-    { id: 10, text: 'Saya termotivasi untuk berkembang.' },
+const questionsPage1 = [
+    { id: 1, text: "Build kitchen cabinets" },
+    { id: 2, text: "Lay brick or tile" },
+    { id: 3, text: "Repair household appliances" },
+    { id: 4, text: "Raise fish in a fish hatchery" },
+    { id: 5, text: "Assemble electronic parts" },
+    { id: 6, text: "Drive a truck to deliver packages to offices and homes" },
+    { id: 7, text: "⁠Test the quality of parts before shipment" },
+    { id: 8, text: "⁠Repair and install locks" },
+    { id: 9, text: "Set up and operate machines to make products" },
+    { id: 10, text: "Put out forest fires" },
 ];
 
+
 const svgPaths = {
-    '1': { unchecked: '/radio-unchecked-red.svg', checked: '/radio-checked-red.svg' },
-    '2': { unchecked: '/radio-unchecked-yellow.svg', checked: '/radio-checked-yellow.svg' },
-    '3': { unchecked: '/radio-unchecked-gray.svg', checked: '/radio-checked-gray.svg' },
-    '4': { unchecked: '/radio-unchecked-green-light.svg', checked: '/radio-checked-green-light.svg' },
-    '5': { unchecked: '/radio-unchecked-green-dark.svg', checked: '/radio-checked-green-dark.svg' },
+    "1": { unchecked: "/radio-unchecked-red.svg", checked: "/radio-checked-red.svg" },
+    "2": { unchecked: "/radio-unchecked-yellow.svg", checked: "/radio-checked-yellow.svg" },
+    "3": { unchecked: "/radio-unchecked-gray.svg", checked: "/radio-checked-gray.svg" },
+    "4": { unchecked: "/radio-unchecked-green-light.svg", checked: "/radio-checked-green-light.svg" },
+    "5": { unchecked: "/radio-unchecked-green-dark.svg", checked: "/radio-checked-green-dark.svg" },
 };
 
-
 const optionLabels = {
-    '1': 'Strongly Disagree',
-    '2': 'Disagree',
-    '3': 'Neutral',
-    '4': 'Agree',
-    '5': 'Strongly Agree',
+    "1": "Strongly Disagree",
+    "2": "Disagree",
+    "3": "Neutral",
+    "4": "Agree",
+    "5": "Strongly Agree",
 };
 
 interface QuizPage1Props {
@@ -42,12 +42,12 @@ interface QuizPage1Props {
 }
 
 const QuizPage1: React.FC<QuizPage1Props> = ({ answers, allAnswers, onAnswer, onNext }) => {
-    const currentAnswered = allAnswers.filter((a) => Array.isArray(a) ? a.length > 0 : a !== null).length;
-    const progressPercent = Math.round((currentAnswered / 30) * 100);
+    const answeredSkala = allAnswers.slice(0, 60).filter((a) => Array.isArray(a) && a.length > 0).length;
+    const progressPercent = Math.round((answeredSkala / 60) * 100);
     const allAnswered = answers.every((a) => Array.isArray(a) && a.length > 0);
 
     useEffect(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: "smooth" });
     }, []);
 
     return (
@@ -75,7 +75,7 @@ const QuizPage1: React.FC<QuizPage1Props> = ({ answers, allAnswers, onAnswer, on
             {/* Progress Bar */}
             <div className="w-full max-w-md mx-auto">
             <div className="flex justify-between text-sm text-gray-600 mt-2">
-                <span>Halaman 1 dari 3</span>
+                <span>Page 1 of 6</span>
                 <span>{progressPercent}%</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-3 mt-1">
@@ -89,7 +89,7 @@ const QuizPage1: React.FC<QuizPage1Props> = ({ answers, allAnswers, onAnswer, on
 
         {/* Pertanyaan */}
         <div className="space-y-6">
-            {dummyQuestions.map((q, index) => {
+            {questionsPage1.map((q, index) => {
             const selected = answers[index] || null;
             const selectedValue = Array.isArray(selected) ? selected[0] : null;
 
@@ -97,7 +97,7 @@ const QuizPage1: React.FC<QuizPage1Props> = ({ answers, allAnswers, onAnswer, on
                 <div
                 key={q.id}
                 className={`rounded-xl p-6 transition-colors text-center ${
-                    selectedValue !== null ? 'bg-[#003E85] text-white' : 'bg-[#F5F7FA] shadow-sm'
+                    selectedValue !== null ? "bg-[#003E85] text-white" : "bg-[#F5F7FA] shadow-sm"
                 }`}
                 >
                 <p className="mb-4 font-semibold">{q.text}</p>
@@ -115,7 +115,7 @@ const QuizPage1: React.FC<QuizPage1Props> = ({ answers, allAnswers, onAnswer, on
                         onClick={() => {
                             onAnswer(index, isSelected ? null : [numericVal]);
                         }}
-                        colorClass={isSelected ? 'text-white' : 'text-black'}
+                        colorClass={isSelected ? "text-white" : "text-black"}
                         />
                     );
                     })}
@@ -132,9 +132,9 @@ const QuizPage1: React.FC<QuizPage1Props> = ({ answers, allAnswers, onAnswer, on
             disabled={!allAnswered}
             className={`px-15 py-2 rounded-[10px] text-lg font-semibold transition duration-300 
                 ${
-                allAnswered
-                    ? 'bg-[#FFD000] hover:brightness-110 text-[#161616]'
-                    : 'bg-gray-400 text-white cursor-not-allowed'
+                    allAnswered
+                    ? "bg-[#FFD000] hover:brightness-110 text-[#161616]"
+                    : "bg-gray-400 text-white cursor-not-allowed"
                 }`}
             >
             Next

@@ -4,6 +4,10 @@ import React, { FC, useState } from "react";
 import QuizPage1 from "./QuizPage1";
 import QuizPage2 from "./QuizPage2";
 import QuizPage3 from "./QuizPage3";
+import QuizPage4 from "./QuizPage4";
+import QuizPage5 from "./QuizPage5";
+import QuizPage6 from "./QuizPage6";
+import QuizPage7 from "./QuizPage7"; // multiple choice page
 import Navbar from "@/components/Navbar";
 import { useRouter } from "next/navigation";
 
@@ -19,12 +23,12 @@ const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
     const router = useRouter();
 
     const riasecTypes = [
-        "R", "R", "R", "R", "R",
-        "I", "I", "I", "I", "I",
-        "A", "A", "A", "A", "A",
-        "S", "S", "S", "S", "S",
-        "E", "E", "E", "E", "E",
-        "C", "C", "C", "C", "C",
+        ...Array(10).fill("R"),
+        ...Array(10).fill("I"),
+        ...Array(10).fill("A"),
+        ...Array(10).fill("S"),
+        ...Array(10).fill("E"),
+        ...Array(10).fill("C"),
     ];
 
     const handleSetAnswer = (
@@ -39,7 +43,7 @@ const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
     };
 
     const handleNext = () => {
-        if (currentPage < 3) {
+        if (currentPage < 7) {
         setCurrentPage((prev) => prev + 1);
         }
     };
@@ -52,12 +56,17 @@ const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
 
     const calculateRiasecScores = (): Record<string, number> => {
         const scores: Record<string, number> = {
-        R: 0, I: 0, A: 0, S: 0, E: 0, C: 0,
+        R: 0,
+        I: 0,
+        A: 0,
+        S: 0,
+        E: 0,
+        C: 0,
         };
 
         answers.forEach((answer, idx) => {
         const type = riasecTypes[idx];
-        if (Array.isArray(answer)) {
+        if (Array.isArray(answer) && type) {
             const sum = answer.reduce((acc, cur) => acc + cur, 0);
             scores[type] += sum;
         }
@@ -70,7 +79,12 @@ const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
         const scores = calculateRiasecScores();
 
         try {
-        const res = await fetch("/api/recommend-careers", {
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+        if (!apiUrl) {
+            throw new Error("API URL is not defined in environment variables.");
+        }
+
+        const res = await fetch(`${apiUrl}/recommend-careers`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(scores),
@@ -83,12 +97,10 @@ const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
         const data = await res.json();
         console.log("Backend response:", data);
 
-        // Simpan data ke localStorage (opsional)
         localStorage.setItem("riasecScores", JSON.stringify(scores));
         localStorage.setItem("recommendations", JSON.stringify(data));
 
-        // Redirect ke halaman hasil
-        router.push("/result");
+        router.push("/quiz/result");
         } catch (error) {
         console.error("Failed to submit scores", error);
         }
@@ -120,6 +132,42 @@ const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
                 allAnswers={answers}
                 answers={answers.slice(20, 30)}
                 onAnswer={(i, val) => handleSetAnswer(2, i, val)}
+                onNext={handleNext}
+                onBack={handleBack}
+            />
+            )}
+            {currentPage === 4 && (
+            <QuizPage4
+                allAnswers={answers}
+                answers={answers.slice(30, 40)}
+                onAnswer={(i, val) => handleSetAnswer(3, i, val)}
+                onNext={handleNext}
+                onBack={handleBack}
+            />
+            )}
+            {currentPage === 5 && (
+            <QuizPage5
+                allAnswers={answers}
+                answers={answers.slice(40, 50)}
+                onAnswer={(i, val) => handleSetAnswer(4, i, val)}
+                onNext={handleNext}
+                onBack={handleBack}
+            />
+            )}
+            {currentPage === 6 && (
+            <QuizPage6
+                allAnswers={answers}
+                answers={answers.slice(50, 60)}
+                onAnswer={(i, val) => handleSetAnswer(5, i, val)}
+                onNext={handleNext}
+                onBack={handleBack}
+            />
+            )}
+            {currentPage === 7 && (
+            <QuizPage7
+                allAnswers={answers}
+                answers={answers.slice(60, 64)}
+                onAnswer={(i, val) => handleSetAnswer(6, i, val)}
                 onBack={handleBack}
                 onSubmit={handleSubmit}
             />

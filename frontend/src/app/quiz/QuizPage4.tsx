@@ -4,17 +4,17 @@ import React, { useEffect, useState } from 'react';
 import RadioOption from '../../components/RadioOption';
 import { AnswerType } from './QuizWrapper';
 
-const questionsPage3 = [
-    { id: 21, text: "Write books or plays" },
-    { id: 22, text: "⁠Play a musical instrument" },
-    { id: 23, text: "⁠Compose or arrange music" },
-    { id: 24, text: "Draw pictures" },
-    { id: 25, text: "Create special effects for movies" },
-    { id: 26, text: "Paint sets for plays" },
-    { id: 27, text: "⁠Write scripts for movies or television shows" },
-    { id: 28, text: "⁠Perform jazz or tap dancee" },
-    { id: 29, text: "⁠Sing in a band" },
-    { id: 30, text: "Edit movies" },
+const questionsPage4 = [
+    { id: 31, text: "⁠Teach an individual an exercise routine" },
+    { id: 32, text: "⁠Help people with personal or emotional problems" },
+    { id: 33, text: "⁠Give career guidance to people" },
+    { id: 34, text: "Perform rehabilitation therapys" },
+    { id: 35, text: "Do volunteer work at a non-profit organization" },
+    { id: 36, text: "Teach children how to play sports" },
+    { id: 37, text: "⁠Teach sign language to people who are deaf or hard of hearing" },
+    { id: 38, text: "Help conduct a group therapy session" },
+    { id: 39, text: "Take care of children at a day-care center" },
+    { id: 40, text: "Teach a high-school class" },
 ];
 
 const svgPaths = {
@@ -33,7 +33,7 @@ const optionLabels = {
     '5': 'Strongly Like',
 };
 
-interface QuizPage3Props {
+interface QuizPage4Props {
     answers: AnswerType[];
     allAnswers: AnswerType[];
     onAnswer: (index: number, value: AnswerType) => void;
@@ -41,13 +41,13 @@ interface QuizPage3Props {
     onBack: () => void;
 }
 
-const QuizPage3: React.FC<QuizPage3Props> = ({ answers, allAnswers, onAnswer, onNext, onBack }) => {
+const QuizPage4: React.FC<QuizPage4Props> = ({ answers, allAnswers, onAnswer, onNext, onBack }) => {
     const [showWarning, setShowWarning] = useState(false);
 
     const answeredOnThisPage = answers.filter((a) => Array.isArray(a) && a.length > 0).length;
     const allAnswered = answeredOnThisPage === 10;
     const currentAnswered = allAnswers.filter((a) => Array.isArray(a) && a.length > 0).length;
-    const progressPercent = Math.round((currentAnswered / 60) * 100);
+    const progressPercent = Math.round((currentAnswered / 60) * 100); // Updated to 60
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -76,7 +76,7 @@ const QuizPage3: React.FC<QuizPage3Props> = ({ answers, allAnswers, onAnswer, on
 
                 <div className="w-full max-w-md mx-auto">
                     <div className="flex justify-between text-sm text-gray-600 mt-2">
-                        <span>Page 3 of 6</span>
+                        <span>Page 4 of 6</span>
                         <span>{progressPercent}%</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-3 mt-1">
@@ -90,7 +90,7 @@ const QuizPage3: React.FC<QuizPage3Props> = ({ answers, allAnswers, onAnswer, on
 
             {/* Soal */}
             <div className="space-y-6">
-                {questionsPage3.map((q, i) => {
+                {questionsPage4.map((q, i) => {
                     const selected = answers[i];
                     const selectedValue = Array.isArray(selected) ? selected[0] : null;
                     const isAnswered = selectedValue !== null;
@@ -164,4 +164,4 @@ const QuizPage3: React.FC<QuizPage3Props> = ({ answers, allAnswers, onAnswer, on
     );
 };
 
-export default QuizPage3;
+export default QuizPage4;

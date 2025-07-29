@@ -3,6 +3,7 @@ from pydantic import BaseModel, Field, model_validator
 import app.data_processing as dp
 import app.recommender as rec
 from typing import Optional
+from fastapi.middleware.cors import CORSMiddleware
 
 JOB_JSON_PATH = "preprocessed/linkedin_jobs.json"
 JOB_INDEX_PATH = "app/embeddings/jobs_st.index"
@@ -16,6 +17,13 @@ MODEL_PATH = "app/models/st_model"
 
 app = FastAPI(title="Recommender")
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # Boleh juga pakai ["*"] buat semua origin
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 class BaseQuery(BaseModel):
     request_id: int = Field(..., description="Unique request ID", example=1234)
     top_n: int = Field(5, description="Number of results to return", example=5)
