@@ -1,91 +1,41 @@
 import { NextResponse } from 'next/server'
 
 // types.ts
-    export interface EducationRecommendation {
+export interface EducationRecommendation {
     program: string;
     university: string;
-    }
+    rank: number;
+}
 
-    export interface ArticleRecommendation {
+export interface ArticleRecommendation {
     title: string;
     link: string;
     snippet: string;
-    }
+}
 
-    export interface CourseRecommendation {
+export interface CourseRecommendation {
     title: string;
-    partner: string;
     description: string;
-    link: string;
-    }
+    marketing_url: string;
+    partner: string;
+    primary_description: string;
+    subject: string;
+    level: string;
+    weeks_to_complete: string;
+    language: string;
+}
 
-    export interface JobRecommendation {
+export interface JobRecommendation {
     title: string;
     company_name: string;
     location: string;
     responsibilities: string[];
-    }
-
-    export const dummyEducation = [
-    {
-        program: 'S1 Teknik Informatika',
-        university: 'Universitas Indonesia',
-    },
-    {
-        program: 'S1 Sistem Informasi',
-        university: 'Universitas Gadjah Mada',
-    },
-    ];
-
-    export const dummyArticles = [
-    {
-        title: 'Langkah Awal Jadi Front-End Developer',
-        link: 'https://example.com/frontend-career',
-        snippet: 'Panduan lengkap untuk memulai karier sebagai front-end developer dari nol.',
-    },
-    {
-        title: 'Pentingnya UI/UX dalam Pengembangan Website',
-        link: 'https://example.com/uiux-guide',
-        snippet: 'UI/UX bukan hanya tampilan menarik, tapi juga pengalaman pengguna yang efektif.',
-    },
-    ];
-
-    export const dummyCourses = [
-    {
-        title: 'Belajar Front-End Developer Pemula',
-        partner: 'Dicoding',
-        description: 'Pelajari HTML, CSS, dan JavaScript dasar untuk membangun website.',
-        link: 'https://www.dicoding.com/learningpaths/39',
-    },
-    {
-        title: 'Responsive Web Design',
-        partner: 'freeCodeCamp',
-        description: 'Pelatihan online untuk membuat desain website yang responsif.',
-        link: 'https://www.freecodecamp.org/learn/responsive-web-design/',
-    },
-    ];
-
-    export const dummyJobs = [
-    {
-        title: 'Front-End Developer',
-        company_name: 'PT. Teknologi Masa Depan',
-        location: 'Jakarta, Indonesia',
-        responsibilities: [
-        'Membangun UI dengan React.js',
-        'Bekerja sama dengan tim desain',
-        'Mengoptimalkan performa website',
-        ],
-    },
-    {
-        title: 'Junior Web Developer',
-        company_name: 'Startup Digital Nusantara',
-        location: 'Bandung, Indonesia',
-        responsibilities: [
-        'Mengembangkan tampilan web menggunakan HTML/CSS',
-        'Berkoordinasi dengan backend engineer',
-        ],
-    },
-    ];
+    level: string;
+    employment_type: string;
+    job_function: string;
+    industries: string;
+    link: string;
+}
 
 export async function GET() {
     try {
@@ -157,6 +107,7 @@ export async function GET() {
 
         return NextResponse.json({ riasec, recommendations })
     } catch (error) {
-        return NextResponse.json({ error: 'Failed to get result' }, { status: 500 })
+        console.error('Error getting result:', error);
+        return NextResponse.json({ error: 'Failed to get result' }, { status: 500 });
     }
 }

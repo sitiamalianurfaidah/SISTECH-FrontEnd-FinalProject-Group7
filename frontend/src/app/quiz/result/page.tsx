@@ -118,7 +118,7 @@ export default function ResultPage() {
     }
 
     return (
-        <div className="min-h-screen bg-[#F5F7FA]">
+        <div className="min-h-screen bg-[#F5F7FA] mt-0">
             <Navbar />
             <div className="max-w-4xl mx-auto mt-0 px-4 py-8">
                 {/* Header Section: "Top 3 Career Matching You!" dan Podium */}
@@ -133,8 +133,8 @@ export default function ResultPage() {
                     <Image src="/right-lightning.svg" alt="lightning" width={180} height={180} />
                     </div>
                     {/* Teks "Top 3 Career Matching You!" */}
-                    <div className="relative z-10 text-center ml-30 xl:ml-70 mr-30 xl:mr-70 mt-0 mb-7 pt-0"> {/* Padding top agar tidak terlalu mepet Navbar */}
-                        <h1 className="relative z-10 text-4xl font-extrabold mb-10 text-[#112A46]">
+                    <div className="relative z-10 text-center ml-30 xl:ml-50 mr-30 xl:mr-50 mt-0 mb-7 pt-0"> {/* Padding top agar tidak terlalu mepet Navbar */}
+                        <h1 className="relative z-10 text-4xl xl:text-5xl font-extrabold mb-8 text-[#112A46]">
                         Top 3 <span className="text-[#003E85]">Career</span> Matching You!
                         </h1>
                     </div>
@@ -179,7 +179,7 @@ export default function ResultPage() {
                     </div>
                 </div>
                 {/* Description / Training Tabs Card */}
-                <div className="flex justify-center mt-5 xl:mt-8">
+                <div className="flex justify-center mt-5 xl:mt-2">
                 <div className="bg-white shadow-md rounded-full px-3 py-2 flex gap-3">
                     <button
                     onClick={() => setActiveTab('description')}
@@ -205,7 +205,7 @@ export default function ResultPage() {
                 </div>
                 {/* Main Content Area - Hanya tampilkan jika selectedCareer ada */}
                 {selectedCareer && (
-                    <div className="bg-[#F5F7FA] p-8 pl-10 xl:pl-0 pr-10 xl:pr-0 rounded-lg mb-8 mt-8"> {/* Menambahkan margin-top */}
+                    <div className="bg-[#F5F7FA] p-8 pl-10 xl:pl-0 pr-10 xl:pr-0 rounded-lg mb-0 mt-5"> {/* Menambahkan margin-top */}
                         {/* Content for Description tab */}
                         {activeTab === 'description' && (
                         <div className="space-y-8">
