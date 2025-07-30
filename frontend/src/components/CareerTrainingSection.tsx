@@ -47,7 +47,7 @@ const CareerTrainingSection = ({
             <div>
                 <strong>{toTitleCase(item.program)}</strong> at {toTitleCase(item.university)}
                 <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-0.5 rounded ml-1">
-                    {item.rank === 999 ? '999+' : `#${item.rank}`}
+                    {item.rank === 999 ? '#999+' : `#${item.rank}`}
                 </span>
             </div>
             </li>
