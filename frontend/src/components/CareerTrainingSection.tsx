@@ -31,7 +31,7 @@ const CareerTrainingSection = ({
 
     const sections = [
     {
-        title: 'Step 1: Pilihan Jurusan',
+        title: 'Step 1: Academic Major',
         content: (
         <ul className="space-y-3 text-[#003E85]">
             {recommendations.map((item, index) => (
@@ -46,7 +46,7 @@ const CareerTrainingSection = ({
         ),
     },
     {
-        title: 'Step 2: Artikel Training',
+        title: 'Step 2: Training',
         content: (
         <ul className="space-y-4 text-[#003E85]">
             {articles.map((article, index) => (
@@ -69,7 +69,7 @@ const CareerTrainingSection = ({
         ),
     },
     {
-        title: 'Step 3: Sertifikasi',
+        title: 'Step 3: Certification',
         content: (
         <ul className="space-y-4 text-[#003E85]">
             {courses.map((course, index) => (
@@ -93,7 +93,7 @@ const CareerTrainingSection = ({
         ),
     },
     {
-        title: 'Step 4: Lowongan Pekerjaan',
+        title: 'Step 4: Job Vacancies',
         content: (
         <ul className="space-y-4 text-[#003E85]">
             {jobs.map((job, index) => (

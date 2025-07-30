@@ -104,7 +104,7 @@ const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
             .map((i) => skillsOptions[i])
             .join(", ");
 
-        const payload = {
+        const payloadCareer = {
             request_id: Date.now(),
             in_highschool: highSchoolAnswer === 0,
             major,
@@ -118,18 +118,23 @@ const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
             c: scores["C"] || 0,
         };
 
+        const textQueryPayload = {
+            request_id: payloadCareer.request_id,
+            query: `${major} ${skills} ${interests}`.trim() || "career query", // fallback kalau kosong
+        };
+
         try {
         const apiUrl = process.env.NEXT_PUBLIC_API_URL;
         if (!apiUrl) {
             throw new Error("API URL is not defined in environment variables.");
         }
 
-        console.log("Payload yang dikirim:", payload);
+        console.log("Payload yang dikirim:", payloadCareer);
 
         const res = await fetch(`${apiUrl}/recommend-careers`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
+            body: JSON.stringify(payloadCareer),
         });
 
         if (!res.ok) {
@@ -141,15 +146,15 @@ const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
         const educationRes = await fetch(`${apiUrl}/recommend-programs`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
+            body: JSON.stringify(textQueryPayload),
         });
         const educationData = await educationRes.json();
         console.log("Backend response:", educationData);
 
-        const articlesRes = await fetch(`${apiUrl}/recommend-articles`, {
+        const articlesRes = await fetch(`${apiUrl}/get-job-articles`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
+            body: JSON.stringify(textQueryPayload),
         });
         const articlesData = await articlesRes.json();
         console.log("Backend response:", articlesData);
@@ -157,7 +162,7 @@ const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
         const coursesRes = await fetch(`${apiUrl}/recommend-courses`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
+            body: JSON.stringify(textQueryPayload),
         });
         const coursesData = await coursesRes.json();
         console.log("Backend response:", coursesData);
@@ -165,7 +170,7 @@ const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
         const jobsRes = await fetch(`${apiUrl}/recommend-jobs`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
+            body: JSON.stringify(textQueryPayload),
         });
         const jobsData = await jobsRes.json();
         console.log("Backend response:", jobsData);
@@ -174,8 +179,8 @@ const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
         localStorage.setItem("recommendations", JSON.stringify(careerData));
         localStorage.setItem("education", JSON.stringify(educationData.recommendations));
         localStorage.setItem("articles", JSON.stringify(articlesData.articles));
-        localStorage.setItem("courses", JSON.stringify(coursesData.courses));
-        localStorage.setItem("jobs", JSON.stringify(jobsData.jobs));
+        localStorage.setItem("courses", JSON.stringify(coursesData.recommendations.courses)); 
+        localStorage.setItem("jobs", JSON.stringify(jobsData.recommendations));
 
         router.push("/quiz/result");
         } catch (error) {
