@@ -3,7 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Image from 'next/image';
-
+import CareerTrainingSection from '@/components/CareerTrainingSection';
+import { dummyEducation, dummyArticles, dummyCourses, dummyJobs } from '@/app/api/result/route';
 
 interface CareerRecommendation {
     title: string;
@@ -181,7 +182,7 @@ export default function ResultPage() {
                 </div>
                 {/* Main Content Area - Hanya tampilkan jika selectedCareer ada */}
                 {selectedCareer && (
-                    <div className="bg-[#F5F7FA] p-8 pl-0 pr-0 rounded-lg mb-8 mt-8"> {/* Menambahkan margin-top */}
+                    <div className="bg-[#F5F7FA] p-8 pl-10 xl:pl-0 pr-10 xl:pr-0 rounded-lg mb-8 mt-8"> {/* Menambahkan margin-top */}
                         {/* Content for Description tab */}
                         {activeTab === 'description' && (
                         <div className="space-y-8">
@@ -222,12 +223,14 @@ export default function ResultPage() {
                         )}
                         {/* Konten untuk tab Training (Placeholder) */}
                         {activeTab === 'training' && (
-                            <div className="bg-[#F0F8FF] p-6 rounded-2xl shadow-inner text-center">
-                                <h3 className="text-2xl font-bold text-gray-800 mb-3">Informasi Pelatihan untuk {selectedCareer.title}</h3>
-                                <p className="text-lg text-gray-700">
-                                    Informasi pelatihan terkait karier ini akan ditampilkan di sini.
-                                </p>
-                                {/* Anda bisa menambahkan detail pelatihan di sini, mungkin dari properti baru di CareerRecommendation */}
+                            <div className="bg-[#F5F7FA] p-6 rounded-2xl text-center">
+                            <CareerTrainingSection
+                                careerTitle={selectedCareer.title}
+                                recommendations={dummyEducation}
+                                articles={dummyArticles}
+                                courses={dummyCourses}
+                                jobs={dummyJobs}
+                            />
                             </div>
                         )}
                     </div>
