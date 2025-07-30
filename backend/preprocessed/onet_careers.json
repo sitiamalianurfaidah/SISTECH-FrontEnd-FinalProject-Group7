@@ -1490,9 +1490,22 @@
             "Change aircraft oil, coolant, or other fluids.",
             "Clean aircraft interiors by picking up waste, wiping down windows, or vacuuming."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Safety and Security",
+            "Mechanical",
+            "Chemistry"
+        ],
+        "skills": [
+            "Operation and Control",
+            "Monitoring",
+            "Equipment Maintenance"
+        ],
+        "abilities": [
+            "Manual Dexterity",
+            "Arm-Hand Steadiness",
+            "Trunk Strength"
+        ]
+        ,
         "technologies": [
             "Spreadsheet software",
             "Microsoft Excel",
@@ -2487,9 +2500,21 @@
             "Create and maintain a database of completed appraisals.",
             "Determine the appropriate type of valuation to make, such as fair market, replacement, or liquidation, based on the needs of the property owner."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Economics and Accounting",
+            "Customer and Personal Service",
+            "Law and Government"
+        ],
+        "skills": [
+            "Critical Thinking",
+            "Active Listening",
+            "Judgment and Decision Making"
+        ],
+        "abilities": [
+            "Oral Comprehension",
+            "Written Comprehension",
+            "Deductive Reasoning"
+        ],
         "technologies": [
             "Data base user interface and query software",
             "Microsoft Access",
@@ -5464,9 +5489,21 @@
             "Automate the deployment of software updates over geographically distributed network nodes.",
             "Design and deploy blockchain design patterns to make transactions secure, transparent, and immutable."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Computers and Electronics",
+            "Mathematics",
+            "Engineering and Technology"
+        ],
+        "skills": [
+            "Complex Problem Solving",
+            "Programming",
+            "System Analysis"
+        ],
+        "abilities": [
+            "Deductive Reasoning",
+            "Inductive Reasoning",
+            "Oral Expression"
+        ],
         "technologies": [
             "Development environment software",
             "Apache Kafka",
@@ -6097,9 +6134,21 @@
             "Comply with traffic regulations to operate vehicles in a safe and courteous manner.",
             "Drive gasoline, diesel, or electrically powered multi-passenger vehicles to transport students between neighborhoods, schools, and school activities."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Public Safety and Security",
+            "Transportation",
+            "Customer and Personal Service"
+        ],
+        "skills": [
+            "Operation and Control",
+            "Monitoring",
+            "Active Listening"
+        ],
+        "abilities": [
+            "Reaction Time",
+            "Far Vision",
+            "Sound Localization"
+        ],
         "technologies": [
             "Operating system software",
             "Microsoft Windows",
@@ -6546,9 +6595,21 @@
             "Attend conferences, workshops, or other training sessions to learn about new tools or methods.",
             "Calibrate devices by comparing measurements of pressure, temperature, humidity, or other environmental conditions to known standards."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Mathematics",
+            "Physics",
+            "Electronics"
+        ],
+        "skills": [
+            "Quality Control Analysis",
+            "Troubleshooting",
+            "Equipment Maintenance"
+        ],
+        "abilities": [
+            "Deductive Reasoning",
+            "Problem Sensitivity",
+            "Manual Dexterity"
+        ],
         "technologies": [
             "Computer aided design CAD software",
             "Autodesk AutoCAD Civil 3D",
@@ -6753,9 +6814,21 @@
             "Advise patients and community members concerning diet, activity, hygiene, or disease prevention.",
             "Answer questions that patients have about their health and well-being."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Medicine and Dentistry",
+            "Biology",
+            "Customer and Personal Service"
+        ],
+        "skills": [
+            "Diagnosis and Treatment",
+            "Active Listening",
+            "Critical Thinking"
+        ],
+        "abilities": [
+            "Problem Sensitivity",
+            "Deductive Reasoning",
+            "Oral Comprehension"
+        ],
         "technologies": [
             "Medical software",
             "Epic Systems",
@@ -12189,9 +12262,21 @@
             "Document divided remains to ensure parts are not misplaced.",
             "Embalm, dress, or otherwise prepare the deceased for viewing."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Public Safety and Security",
+            "Mechanical",
+            "Chemistry"
+        ],
+        "skills": [
+            "Operation and Control",
+            "Equipment Maintenance",
+            "Monitoring"
+        ],
+        "abilities": [
+            "Manual Dexterity",
+            "Trunk Strength",
+            "Arm-Hand Steadiness"
+        ],
         "technologies": [
             "Spreadsheet software",
             "Microsoft Excel",
@@ -13088,9 +13173,35 @@
             "Apply feature selection algorithms to models predicting outcomes of interest, such as sales, attrition, and healthcare use.",
             "Apply sampling techniques to determine groups to be surveyed or use complete enumeration methods."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Mathematics",
+            "Statistics",
+            "Computer Science",
+            "Data Structures and Algorithms",
+            "Machine Learning",
+            "Database Management",
+            "Programming Languages (Python, R, SQL)",
+            "Data Visualization"
+        ],
+        "skills": [
+            "Critical Thinking",
+            "Data Analysis",
+            "Programming",
+            "Complex Problem Solving",
+            "Statistical Modeling",
+            "Communication",
+            "Active Learning",
+            "Systems Evaluation"
+        ],
+        "abilities": [
+            "Mathematical Reasoning",
+            "Deductive Reasoning",
+            "Inductive Reasoning",
+            "Problem Sensitivity",
+            "Oral and Written Comprehension",
+            "Information Ordering",
+            "Near Vision (for reading code and charts)"
+        ],
         "technologies": [
             "Data base user interface and query software",
             "Amazon Elastic Compute Cloud EC2",
@@ -14042,9 +14153,21 @@
             "Analyze log files or other digital information to identify the perpetrators of network intrusions.",
             "Conduct predictive or reactive analyses on security measures to support cyber security initiatives."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Computers and Electronics",
+            "Law and Government",
+            "Security and Public Safety"
+        ],
+        "skills": [
+            "Complex Problem Solving",
+            "Critical Thinking",
+            "Data Analysis"
+        ],
+        "abilities": [
+            "Deductive Reasoning",
+            "Inductive Reasoning",
+            "Written Comprehension"
+        ],
         "technologies": [
             "Operating system software",
             "Apple iOS",
@@ -14186,9 +14309,21 @@
             "Adhere to schedules to keep events running on time.",
             "Advertise services using media such as internet advertising and brochures."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Fine Arts",
+            "Customer and Personal Service",
+            "Communications and Media"
+        ],
+        "skills": [
+            "Active Listening",
+            "Social Perceptiveness",
+            "Coordination"
+        ],
+        "abilities": [
+            "Oral Expression",
+            "Oral Comprehension",
+            "Auditory Attention"
+        ],
         "technologies": [
             "Spreadsheet software",
             "Microsoft Excel",
@@ -16407,9 +16542,21 @@
             "Assess nature and extent of illness or injury to establish and prioritize medical procedures.",
             "Attend training classes to maintain certification licensure, keep abreast of new developments in the field, or maintain existing knowledge."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Medicine and Dentistry",
+            "Public Safety and Security",
+            "Customer and Personal Service"
+        ],
+        "skills": [
+            "Critical Thinking",
+            "Active Listening",
+            "Judgment and Decision Making"
+        ],
+        "abilities": [
+            "Problem Sensitivity",
+            "Deductive Reasoning",
+            "Reaction Time"
+        ],
         "technologies": [
             "Medical software",
             "MedDataSolutions Regist*r",
@@ -16436,9 +16583,21 @@
             "Assess patients' pain levels or sedation requirements.",
             "Collect and record patient information, such as medical history or examination results, in electronic or handwritten medical records."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Medicine and Dentistry",
+            "Biology",
+            "Psychology"
+        ],
+        "skills": [
+            "Critical Thinking",
+            "Judgment and Decision Making",
+            "Active Listening"
+        ],
+        "abilities": [
+            "Problem Sensitivity",
+            "Deductive Reasoning",
+            "Oral Comprehension"
+        ],
         "technologies": [
             "Medical software",
             "Epic Systems",
@@ -16831,9 +16990,21 @@
             "Assign tasks and work hours to staff.",
             "Calculate and record department expenses and revenue."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Customer and Personal Service",
+            "Administration and Management",
+            "Public Safety and Security"
+        ],
+        "skills": [
+            "Coordination",
+            "Monitoring",
+            "Management of Personnel Resources"
+        ],
+        "abilities": [
+            "Oral Expression",
+            "Oral Comprehension",
+            "Written Comprehension"
+        ],
         "technologies": [
             "Enterprise resource planning ERP software",
             "Microsoft Dynamics",
@@ -19049,9 +19220,21 @@
             "Analyze financial or operational performance of companies facing financial difficulties to identify or recommend remedies.",
             "Assess companies as investments for clients by examining company facilities."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Economics and Accounting",
+            "Mathematics",
+            "Administration and Management"
+        ],
+        "skills": [
+            "Critical Thinking",
+            "Complex Problem Solving",
+            "Judgment and Decision Making"
+        ],
+        "abilities": [
+            "Deductive Reasoning",
+            "Inductive Reasoning",
+            "Written Comprehension"
+        ],
         "technologies": [
             "Analytical or scientific software",
             "IBM SPSS Statistics",
@@ -19276,9 +19459,21 @@
             "Analyze new legislation to determine impact on risk exposure.",
             "Conduct statistical analyses to quantify risk, using statistical analysis software or econometric models."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Economics and Accounting",
+            "Mathematics",
+            "Law and Government"
+        ],
+        "skills": [
+            "Analysis",
+            "Critical Thinking",
+            "Judgment and Decision Making"
+        ],
+        "abilities": [
+            "Deductive Reasoning",
+            "Inductive Reasoning",
+            "Written Comprehension"
+        ],
         "technologies": [
             "Analytical or scientific software",
             "IBM SPSS Statistics",
@@ -19700,9 +19895,21 @@
             "Apply customer feedback to service improvement efforts.",
             "Assign work schedules, following work requirements, to ensure quality and timely delivery of service."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Customer and Personal Service",
+            "Administration and Management",
+            "Personnel and Human Resources"
+        ],
+        "skills": [
+            "Monitoring",
+            "Coordination",
+            "Management of Personnel Resources"
+        ],
+        "abilities": [
+            "Oral Expression",
+            "Oral Comprehension",
+            "Problem Sensitivity"
+        ],
         "technologies": [
             "Spreadsheet software",
             "Microsoft Excel",
@@ -20427,9 +20634,21 @@
             "Apply customer feedback to service improvement efforts.",
             "Compute or estimate cash, payroll, transportation, or personnel requirements."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Customer and Personal Service",
+            "Administration and Management",
+            "Personnel and Human Resources"
+        ],
+        "skills": [
+            "Monitoring",
+            "Coordination",
+            "Management of Personnel Resources"
+        ],
+        "abilities": [
+            "Oral Expression",
+            "Oral Comprehension",
+            "Written Comprehension"
+        ],
         "technologies": [
             "Spreadsheet software",
             "Microsoft Excel",
@@ -20701,9 +20920,21 @@
             "Apprehend or evict trespassers, rule violators, or other security threats from the premises.",
             "Assign security personnel to posts or patrols."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Public Safety and Security",
+            "Administration and Management",
+            "Law and Government"
+        ],
+        "skills": [
+            "Monitoring",
+            "Judgment and Decision Making",
+            "Coordination"
+        ],
+        "abilities": [
+            "Problem Sensitivity",
+            "Oral Expression",
+            "Deductive Reasoning"
+        ],
         "technologies": [
             "Data base user interface and query software",
             "Microsoft Access",
@@ -22400,9 +22631,21 @@
             "Compile or develop materials to submit to granting or other funding organizations.",
             "Conduct research to identify the goals, net worth, charitable donation history, or other data related to potential donors, potential investors, or general donor markets."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Sales and Marketing",
+            "Administration and Management",
+            "Communications and Media"
+        ],
+        "skills": [
+            "Persuasion",
+            "Management of Financial Resources",
+            "Active Listening"
+        ],
+        "abilities": [
+            "Oral Expression",
+            "Written Expression",
+            "Originality"
+        ],
         "technologies": [
             "Video creation and editing software",
             "Adobe After Effects",
@@ -24622,9 +24865,21 @@
             "Compile medical care and census data for statistical reports on diseases treated, surgery performed, or use of hospital beds.",
             "Design databases to support healthcare applications, ensuring security, performance and reliability."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Computers and Electronics",
+            "Medicine and Dentistry",
+            "Administration and Management"
+        ],
+        "skills": [
+            "Complex Problem Solving",
+            "Systems Analysis",
+            "Data Analysis"
+        ],
+        "abilities": [
+            "Deductive Reasoning",
+            "Information Ordering",
+            "Written Comprehension"
+        ],
         "technologies": [
             "Medical software",
             "eClinicalWorks EHR software",
@@ -25566,9 +25821,21 @@
             "Cut sections of body tissues for microscopic examination, using microtomes.",
             "Embed tissue specimens into paraffin wax blocks, or infiltrate tissue specimens with wax."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Biology",
+            "Chemistry",
+            "Medicine and Dentistry"
+        ],
+        "skills": [
+            "Quality Control Analysis",
+            "Operation and Control",
+            "Troubleshooting"
+        ],
+        "abilities": [
+            "Manual Dexterity",
+            "Arm-Hand Steadiness",
+            "Near Vision"
+        ],
         "technologies": [
             "Medical software",
             "Cerner Millennium",
@@ -26500,9 +26767,21 @@
             "Answer technical questions from hydrologists, policymakers, or other customers developing water conservation plans.",
             "Apply research findings to minimize the environmental impacts of pollution, waterborne diseases, erosion, or sedimentation."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Physics",
+            "Mathematics",
+            "Geography"
+        ],
+        "skills": [
+            "Data Collection",
+            "Equipment Maintenance",
+            "Troubleshooting"
+        ],
+        "abilities": [
+            "Inductive Reasoning",
+            "Information Ordering",
+            "Problem Sensitivity"
+        ],
         "technologies": [
             "Geographic information system",
             "ESRI ArcGIS software",
@@ -27105,9 +27384,21 @@
             "Conduct investigations of information security breaches to identify vulnerabilities and evaluate the damage.",
             "Coordinate documentation of computer security or emergency measure policies, procedures, or tests."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Computers and Electronics",
+            "Security and Public Safety",
+            "Law and Government"
+        ],
+        "skills": [
+            "Complex Problem Solving",
+            "Systems Analysis",
+            "Critical Thinking"
+        ],
+        "abilities": [
+            "Deductive Reasoning",
+            "Problem Sensitivity",
+            "Written Comprehension"
+        ],
         "technologies": [
             "Operating system software",
             "Apple iOS",
@@ -28834,9 +29125,21 @@
             "Appoint nominees to leadership posts, or approve such appointments.",
             "Confer with colleagues to formulate positions and strategies pertaining to pending issues."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Law and Government",
+            "Political Science",
+            "Sociology and Anthropology"
+        ],
+        "skills": [
+            "Negotiation",
+            "Persuasion",
+            "Critical Thinking"
+        ],
+        "abilities": [
+            "Oral Expression",
+            "Oral Comprehension",
+            "Written Comprehension"
+        ],
         "technologies": [
             "Word processing software",
             "Apple iWork Pages",
@@ -29278,9 +29581,21 @@
             "Consult with lighting director or production staff to determine lighting requirements.",
             "Disassemble and store equipment after performances."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Fine Arts",
+            "Electronics",
+            "Physics"
+        ],
+        "skills": [
+            "Operation and Control",
+            "Equipment Maintenance",
+            "Troubleshooting"
+        ],
+        "abilities": [
+            "Manual Dexterity",
+            "Arm-Hand Steadiness",
+            "Visual Color Discrimination"
+        ],
         "technologies": [
             "Data base user interface and query software",
             "FileMaker Pro",
@@ -32406,9 +32721,21 @@
             "Compile and maintain patients' medical records to document condition and treatment and to provide data for research or cost control and care improvement efforts.",
             "Consult classification manuals to locate information about disease processes."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Medicine and Dentistry",
+            "Clerical",
+            "Computers and Electronics"
+        ],
+        "skills": [
+            "Information Ordering",
+            "Active Listening",
+            "Written Comprehension"
+        ],
+        "abilities": [
+            "Written Comprehension",
+            "Oral Comprehension",
+            "Attention to Detail"
+        ],
         "technologies": [
             "Medical software",
             "eClinicalWorks EHR software",
@@ -37215,9 +37542,21 @@
             "Conduct research to develop and test surgical techniques that can improve operating procedures and outcomes related to musculoskeletal injuries and diseases.",
             "Diagnose bodily disorders and orthopedic conditions, and provide treatments, such as medicines and surgeries, in clinics, hospital wards, or operating rooms."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Medicine and Dentistry",
+            "Biology",
+            "Anatomy"
+        ],
+        "skills": [
+            "Diagnosis and Treatment",
+            "Critical Thinking",
+            "Active Listening"
+        ],
+        "abilities": [
+            "Problem Sensitivity",
+            "Manual Dexterity",
+            "Deductive Reasoning"
+        ],
         "technologies": [
             "Medical software",
             "Epic Systems",
@@ -37811,9 +38150,21 @@
             "Administer first aid treatment or life support care to sick or injured persons in prehospital settings.",
             "Assess nature and extent of illness or injury to establish and prioritize medical procedures."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Medicine and Dentistry",
+            "Public Safety and Security",
+            "Customer and Personal Service"
+        ],
+        "skills": [
+            "Critical Thinking",
+            "Judgment and Decision Making",
+            "Active Listening"
+        ],
+        "abilities": [
+            "Problem Sensitivity",
+            "Reaction Time",
+            "Oral Comprehension"
+        ],
         "technologies": [
             "Medical software",
             "eClinicalWorks EHR software",
@@ -38419,9 +38770,21 @@
             "Conduct research to develop and test surgical techniques that can improve operating procedures and outcomes.",
             "Consult with patient's other medical care specialists, such as cardiologist and endocrinologist, to determine if surgery is necessary."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Medicine and Dentistry",
+            "Biology",
+            "Psychology"
+        ],
+        "skills": [
+            "Diagnosis and Treatment",
+            "Critical Thinking",
+            "Active Listening"
+        ],
+        "abilities": [
+            "Problem Sensitivity",
+            "Deductive Reasoning",
+            "Oral Comprehension"
+        ],
         "technologies": [
             "Medical software",
             "Epic Systems",
@@ -38514,9 +38877,21 @@
             "Collect stakeholder data to evaluate risk and to develop mitigation strategies.",
             "Conduct network and security system audits, using established criteria."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Computers and Electronics",
+            "Security and Public Safety",
+            "Law and Government"
+        ],
+        "skills": [
+            "Complex Problem Solving",
+            "Critical Thinking",
+            "Systems Analysis"
+        ],
+        "abilities": [
+            "Deductive Reasoning",
+            "Inductive Reasoning",
+            "Information Ordering"
+        ],
         "technologies": [
             "Development environment software",
             "Go",
@@ -41786,9 +42161,21 @@
             "Communicate with key stakeholders to determine project requirements and objectives.",
             "Confer with project personnel to identify and resolve problems."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Administration and Management",
+            "Economics and Accounting",
+            "Customer and Personal Service"
+        ],
+        "skills": [
+            "Coordination",
+            "Time Management",
+            "Monitoring"
+        ],
+        "abilities": [
+            "Oral Expression",
+            "Written Comprehension",
+            "Information Ordering"
+        ],
         "technologies": [
             "Enterprise resource planning ERP software",
             "Microsoft Dynamics",
@@ -42253,9 +42640,21 @@
             "Confer with labor relations managers to develop internal communications that keep employees informed of company activities.",
             "Design and edit promotional publications, such as brochures."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Communications and Media",
+            "Sales and Marketing",
+            "Administration and Management"
+        ],
+        "skills": [
+            "Persuasion",
+            "Negotiation",
+            "Active Listening"
+        ],
+        "abilities": [
+            "Oral Expression",
+            "Written Expression",
+            "Originality"
+        ],
         "technologies": [
             "Video creation and editing software",
             "TikTok",
@@ -45494,9 +45893,21 @@
             "Attend sales or trade meetings or read related publications to obtain information about market conditions, business trends, regulations, or industry developments.",
             "Compute and compare costs of services."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Sales and Marketing",
+            "Customer and Personal Service",
+            "Economics and Accounting"
+        ],
+        "skills": [
+            "Persuasion",
+            "Active Listening",
+            "Negotiation"
+        ],
+        "abilities": [
+            "Oral Expression",
+            "Oral Comprehension",
+            "Problem Sensitivity"
+        ],
         "technologies": [
             "Spreadsheet software",
             "Microsoft Excel",
@@ -45696,9 +46107,21 @@
             "Assist children with disabilities or children with psychological, emotional, or behavioral issues with boarding and exiting the school bus.",
             "Buckle seatbelts or fasten wheelchair tie-down straps to secure passengers for transportation."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Public Safety and Security",
+            "Customer and Personal Service",
+            "Psychology"
+        ],
+        "skills": [
+            "Monitoring",
+            "Active Listening",
+            "Social Perceptiveness"
+        ],
+        "abilities": [
+            "Oral Expression",
+            "Oral Comprehension",
+            "Reaction Time"
+        ],
         "technologies": [
             "Operating system software",
             "Microsoft Windows",
@@ -46145,9 +46568,21 @@
             "Budget and schedule security design work.",
             "Conduct security audits to identify potential vulnerabilities related to physical security or staff safety."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Security and Public Safety",
+            "Administration and Management",
+            "Law and Government"
+        ],
+        "skills": [
+            "Critical Thinking",
+            "Complex Problem Solving",
+            "Systems Analysis"
+        ],
+        "abilities": [
+            "Deductive Reasoning",
+            "Problem Sensitivity",
+            "Oral Expression"
+        ],
         "technologies": [
             "Data base user interface and query software",
             "Amazon Web Services AWS software",
@@ -46179,9 +46614,21 @@
             "Assess risks to mitigate potential consequences of incidents and develop a plan to respond to incidents.",
             "Attend meetings, professional seminars, or conferences to keep abreast of changes in executive legislative directives or new technologies impacting security operations."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Security and Public Safety",
+            "Administration and Management",
+            "Law and Government"
+        ],
+        "skills": [
+            "Monitoring",
+            "Judgment and Decision Making",
+            "Management of Personnel Resources"
+        ],
+        "abilities": [
+            "Problem Sensitivity",
+            "Oral Expression",
+            "Written Comprehension"
+        ],
         "technologies": [
             "Project management software",
             "Incident command system ICS software",
@@ -47056,9 +47503,21 @@
             "Check the condition of a vehicle's tires, brakes, windshield wipers, lights, oil, fuel, water, and safety equipment to ensure that everything is in working order.",
             "Collect fares or vouchers from passengers, and make change or issue receipts as necessary."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Transportation",
+            "Customer and Personal Service",
+            "Public Safety and Security"
+        ],
+        "skills": [
+            "Operation and Control",
+            "Service Orientation",
+            "Active Listening"
+        ],
+        "abilities": [
+            "Reaction Time",
+            "Far Vision",
+            "Spatial Orientation"
+        ],
         "technologies": [
             "Spreadsheet software",
             "Microsoft Excel",
@@ -47627,9 +48086,21 @@
             "Analyze user needs and software requirements to determine feasibility of design within time and cost constraints.",
             "Confer with data processing or project managers to obtain information on limitations or capabilities for data processing projects."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Computers and Electronics",
+            "Mathematics",
+            "Engineering and Technology"
+        ],
+        "skills": [
+            "Complex Problem Solving",
+            "Programming",
+            "Systems Analysis"
+        ],
+        "abilities": [
+            "Deductive Reasoning",
+            "Inductive Reasoning",
+            "Information Ordering"
+        ],
         "technologies": [
             "Development environment software",
             "Oracle Java 2 Platform Enterprise Edition J2EE",
@@ -48223,9 +48694,21 @@
             "Attend professional meetings, educational conferences, or teacher training workshops to maintain or improve professional competence.",
             "Collaborate with other teachers or administrators to develop, evaluate, or revise elementary school programs."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Education and Training",
+            "Psychology",
+            "Sociology and Anthropology"
+        ],
+        "skills": [
+            "Instruction",
+            "Active Listening",
+            "Social Perceptiveness"
+        ],
+        "abilities": [
+            "Oral Expression",
+            "Oral Comprehension",
+            "Problem Sensitivity"
+        ],
         "technologies": [
             "Electronic mail software",
             "Email software",
@@ -48258,9 +48741,21 @@
             "Attend professional meetings, educational conferences, or teacher training workshops to maintain or improve professional competence.",
             "Collaborate with other teachers or administrators to develop, evaluate, or revise kindergarten programs."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Education and Training",
+            "Psychology",
+            "Sociology and Anthropology"
+        ],
+        "skills": [
+            "Instruction",
+            "Active Listening",
+            "Social Perceptiveness"
+        ],
+        "abilities": [
+            "Oral Expression",
+            "Oral Comprehension",
+            "Problem Sensitivity"
+        ],
         "technologies": [
             "Electronic mail software",
             "Email software",
@@ -49253,9 +49748,21 @@
             "Assist students with boarding or exiting school buses.",
             "Attend professional meetings, educational conferences, or teacher training workshops to improve professional competence."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Education and Training",
+            "Customer and Personal Service",
+            "Psychology"
+        ],
+        "skills": [
+            "Instruction",
+            "Active Listening",
+            "Monitoring"
+        ],
+        "abilities": [
+            "Oral Expression",
+            "Oral Comprehension",
+            "Problem Sensitivity"
+        ],
         "technologies": [
             "Spreadsheet software",
             "Microsoft Excel",
@@ -50177,9 +50684,21 @@
             "Communicate with dispatchers by radio, telephone, or computer to exchange information and receive requests for passenger service.",
             "Complete accident reports when necessary."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Transportation",
+            "Customer and Personal Service",
+            "Public Safety and Security"
+        ],
+        "skills": [
+            "Operation and Control",
+            "Service Orientation",
+            "Active Listening"
+        ],
+        "abilities": [
+            "Reaction Time",
+            "Far Vision",
+            "Spatial Orientation"
+        ],
         "technologies": [
             "Spreadsheet software",
             "Microsoft Excel",
@@ -50329,9 +50848,21 @@
             "Assist librarians in school libraries.",
             "Attend staff meetings and serve on committees, as required."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Education and Training",
+            "Psychology",
+            "Customer and Personal Service"
+        ],
+        "skills": [
+            "Active Listening",
+            "Social Perceptiveness",
+            "Monitoring"
+        ],
+        "abilities": [
+            "Oral Comprehension",
+            "Oral Expression",
+            "Problem Sensitivity"
+        ],
         "technologies": [
             "Electronic mail software",
             "Email software",
@@ -53421,9 +53952,21 @@
             "Collaborate with web development professionals, such as front-end or back-end developers, to complete the full scope of Web development projects.",
             "Communicate with network personnel or Web site hosting agencies to address hardware or software issues affecting Web sites."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Computers and Electronics",
+            "Design",
+            "Communications and Media"
+        ],
+        "skills": [
+            "Design",
+            "Programming",
+            "Critical Thinking"
+        ],
+        "abilities": [
+            "Originality",
+            "Written Expression",
+            "Information Ordering"
+        ],
         "technologies": [
             "Web platform development software",
             "Bootstrap",

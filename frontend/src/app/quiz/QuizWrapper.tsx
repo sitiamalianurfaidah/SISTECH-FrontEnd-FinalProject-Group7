@@ -77,6 +77,11 @@ const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
     };
 
     const handleSubmit = async () => {
+        const confirmSubmit = window.confirm("Are you sure you want to send the quiz now?");
+        if (!confirmSubmit) {
+            return; // kalau user cancel, hentikan proses submit
+        }
+
         const scores = calculateRiasecScores();
 
         const majorOptions = questionsPage7[0].options;

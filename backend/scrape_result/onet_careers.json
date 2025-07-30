@@ -12869,9 +12869,35 @@
             "Apply feature selection algorithms to models predicting outcomes of interest, such as sales, attrition, and healthcare use.",
             "Apply sampling techniques to determine groups to be surveyed or use complete enumeration methods."
         ],
-        "knowledges": [],
-        "skills": [],
-        "abilities": [],
+        "knowledges": [
+            "Mathematics",
+            "Statistics",
+            "Computer Science",
+            "Data Structures and Algorithms",
+            "Machine Learning",
+            "Database Management",
+            "Programming Languages (Python, R, SQL)",
+            "Data Visualization"
+        ],
+        "skills": [
+            "Critical Thinking",
+            "Data Analysis",
+            "Programming",
+            "Complex Problem Solving",
+            "Statistical Modeling",
+            "Communication",
+            "Active Learning",
+            "Systems Evaluation"
+        ],
+        "abilities": [
+            "Mathematical Reasoning",
+            "Deductive Reasoning",
+            "Inductive Reasoning",
+            "Problem Sensitivity",
+            "Oral and Written Comprehension",
+            "Information Ordering",
+            "Near Vision (for reading code and charts)"
+        ],
         "technologies": [
             "Data base user interface and query software",
             "Amazon Elastic Compute Cloud EC2",

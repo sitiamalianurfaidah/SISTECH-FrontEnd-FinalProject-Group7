@@ -12,7 +12,7 @@ interface CareerRecommendation {
     description: string;
     on_the_job: string[];
     skills: string[];
-    knowledge: string[];
+    knowledges: string[];
     abilities: string[];
     job_outlook: {
         description: string;
@@ -82,6 +82,11 @@ export default function ResultPage() {
 
     fetchFromLocalStorage();
 }, []);
+
+    const formatList = (list?: string[], max = 2): string => {
+        if (!Array.isArray(list)) return "";
+        return list.slice(0, max).map((item) => item.toLowerCase()).join(", ");
+    };
 
     const selectedCareer = selectedCareerIndex !== null && recommendations.length > selectedCareerIndex
         ? recommendations[selectedCareerIndex]
@@ -228,8 +233,9 @@ export default function ResultPage() {
                             <h2 className="text-2xl font-bold text-[#002C5E] mb-3">Why This Career Suits You</h2>
                             <div className="bg-[#FFFAE6] p-6 rounded-md shadow-inner shadow-[#fff1b0c3]">
                             <p className="text-lg text-gray-700 leading-relaxed">
-                                Based on your results, you are likely to thrive in a career that values {selectedCareer.skills} and relies heavily on your {selectedCareer.abilities}. Your strong foundation in {selectedCareer.knowledge} aligns perfectly with the role of a <strong>{selectedCareer.title}</strong>, making this a great fit for your strengths and interests.
+                                Based on your results, you are likely to thrive in a career that values {formatList(selectedCareer?.skills)} and relies heavily on your {formatList(selectedCareer?.abilities)}. Your strong foundation in {formatList(selectedCareer?.knowledges)} aligns perfectly with the role of a <strong>{selectedCareer?.title}</strong>, making this a great fit for your strengths and interests.
                             </p>
+
                             </div>
 
                             {/* Future Outlook */}
