@@ -135,6 +135,7 @@ const CareerTrainingSection = ({
                 {!isOpen && (
                 <p className="font-semibold text-center w-full">{section.title}</p>
                 )}
+                <Image src={arrowIcon} alt="toggle" width={20} height={20} />
             </div>
 
             <div

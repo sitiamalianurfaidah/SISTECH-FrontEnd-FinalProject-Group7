@@ -130,12 +130,47 @@ const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
         if (!res.ok) {
             throw new Error(`HTTP error! status: ${res.status}`);
         }
+        const careerData = await res.json();
+        console.log("Backend response:", careerData);
 
-        const data = await res.json();
-        console.log("Backend response:", data);
+        const educationRes = await fetch(`${apiUrl}/recommend-programs`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+        });
+        const educationData = await educationRes.json();
+        console.log("Backend response:", educationData);
+
+        const articlesRes = await fetch(`${apiUrl}/recommend-articles`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+        });
+        const articlesData = await articlesRes.json();
+        console.log("Backend response:", articlesData);
+
+        const coursesRes = await fetch(`${apiUrl}/recommend-courses`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+        });
+        const coursesData = await coursesRes.json();
+        console.log("Backend response:", coursesData);
+
+        const jobsRes = await fetch(`${apiUrl}/recommend-jobs`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+        });
+        const jobsData = await jobsRes.json();
+        console.log("Backend response:", jobsData);
 
         localStorage.setItem("riasecScores", JSON.stringify(scores));
-        localStorage.setItem("recommendations", JSON.stringify(data));
+        localStorage.setItem("recommendations", JSON.stringify(careerData));
+        localStorage.setItem("education", JSON.stringify(educationData.recommendations));
+        localStorage.setItem("articles", JSON.stringify(articlesData.articles));
+        localStorage.setItem("courses", JSON.stringify(coursesData.courses));
+        localStorage.setItem("jobs", JSON.stringify(jobsData.jobs));
 
         router.push("/quiz/result");
         } catch (error) {

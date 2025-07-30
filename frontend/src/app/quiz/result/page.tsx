@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Image from 'next/image';
 import CareerTrainingSection from '@/components/CareerTrainingSection';
-import { dummyEducation, dummyArticles, dummyCourses, dummyJobs } from '@/app/api/result/route';
 
 interface CareerRecommendation {
     title: string;
@@ -19,7 +18,6 @@ interface CareerRecommendation {
         description: string;
         category: string;
     };
-    // Properti salary dan imageUrl tetap dihapus seperti permintaan sebelumnya
 }
 
 export default function ResultPage() {
@@ -28,46 +26,66 @@ export default function ResultPage() {
     const [error, setError] = useState<string | null>(null);
     const [selectedCareerIndex, setSelectedCareerIndex] = useState<number | null>(0); // Default ke karier pertama (index 0)
     const [activeTab, setActiveTab] = useState<'description' | 'training'>('description'); // State untuk tab Description/Training
-    
-    useEffect(() => {
-        const fetchResults = async () => {
-            try {
-                const res = await fetch('/api/result');
-                if (!res.ok) {
-                    throw new Error(`Failed to fetch result: ${res.status} ${res.statusText}`);
-                }
-                const data = await res.json();
+    const [education, setEducation] = useState([]);
+    const [articles, setArticles] = useState([]);
+    const [courses, setCourses] = useState([]);
+    const [jobs, setJobs] = useState([]);
 
-                if (data.recommendations && Array.isArray(data.recommendations)) {
-                    setRecommendations(data.recommendations);
+    useEffect(() => {
+    const fetchFromLocalStorage = () => {
+        try {
+            const stored = localStorage.getItem("recommendations");
+            if (stored) {
+                const parsed = JSON.parse(stored);
+
+                if (parsed.recommendations && Array.isArray(parsed.recommendations)) {
+                    setRecommendations(parsed.recommendations);
                 } else {
-                    console.warn("No recommendations found or data format is incorrect.");
+                    console.warn("Data recommendations tidak ditemukan atau format salah");
                     setRecommendations([]);
                 }
-                
-                setLoading(false);
-            } catch (err) {
-                if (err instanceof Error) {
-                    setError(err.message);
-                } else {
-                    setError('Something went wrong');
-                }
-                setLoading(false);
+            } else {
+                console.warn("Tidak ada data recommendations disimpan");
+                setRecommendations([]);
             }
-        };
 
-        fetchResults();
-    }, []);
+            // Ambil dan set data lainnya
+            const educationData = JSON.parse(localStorage.getItem("education") || "[]");
+            setEducation(educationData);
+
+            const articlesData = JSON.parse(localStorage.getItem("articles") || "[]");
+            setArticles(articlesData);
+
+            const coursesData = JSON.parse(localStorage.getItem("courses") || "[]");
+            setCourses(coursesData);
+
+            const jobsData = JSON.parse(localStorage.getItem("jobs") || "[]");
+            setJobs(jobsData);
+
+        } catch (err) {
+            if (err instanceof Error) {
+                setError(err.message);
+            } else {
+                setError("Gagal memuat data dari localStorage.");
+            }
+
+            // Reset semua jika error
+            setRecommendations([]);
+            setEducation([]);
+            setArticles([]);
+            setCourses([]);
+            setJobs([]);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    fetchFromLocalStorage();
+}, []);
 
     const selectedCareer = selectedCareerIndex !== null && recommendations.length > selectedCareerIndex
         ? recommendations[selectedCareerIndex]
         : null;
-
-    const uncapitalizeWords = (arr: string[]): string => {
-    return arr
-        .map((word: string) => word.charAt(0).toLowerCase() + word.slice(1))
-        .join(', ');
-    };
 
     if (loading) {
         return (
@@ -191,7 +209,7 @@ export default function ResultPage() {
                             <h2 className="text-2xl font-bold text-[#002C5E] mb-3">{selectedCareer.title}</h2>
                             <div className="bg-[#FFFAE6] p-6 rounded-2xl shadow-inner shadow-[#fff1b0c3]">
                                 <p className="text-lg text-gray-700 leading-relaxed">
-                                <strong className="font-semibold">{selectedCareer.title}</strong> is {selectedCareer.what_they_do} {selectedCareer.description}
+                                {selectedCareer.what_they_do} {selectedCareer.description}
                                 </p>
                             </div>
                             </div>
@@ -210,7 +228,7 @@ export default function ResultPage() {
                             <h2 className="text-2xl font-bold text-[#002C5E] mb-3">Why This Career Suits You</h2>
                             <div className="bg-[#FFFAE6] p-6 rounded-md shadow-inner shadow-[#fff1b0c3]">
                             <p className="text-lg text-gray-700 leading-relaxed">
-                                Based on your results, you are likely to thrive in a career that values {uncapitalizeWords(selectedCareer.skills)} and relies heavily on your {uncapitalizeWords(selectedCareer.abilities)}. Your strong foundation in {uncapitalizeWords(selectedCareer.knowledge)} aligns perfectly with the role of a <strong>{selectedCareer.title}</strong>, making this a great fit for your strengths and interests.
+                                Based on your results, you are likely to thrive in a career that values {selectedCareer.skills} and relies heavily on your {selectedCareer.abilities}. Your strong foundation in {selectedCareer.knowledge} aligns perfectly with the role of a <strong>{selectedCareer.title}</strong>, making this a great fit for your strengths and interests.
                             </p>
                             </div>
 
@@ -226,10 +244,10 @@ export default function ResultPage() {
                             <div className="bg-[#F5F7FA] p-6 rounded-2xl text-center">
                             <CareerTrainingSection
                                 careerTitle={selectedCareer.title}
-                                recommendations={dummyEducation}
-                                articles={dummyArticles}
-                                courses={dummyCourses}
-                                jobs={dummyJobs}
+                                recommendations={education}
+                                articles={articles}
+                                courses={courses}
+                                jobs={jobs}
                             />
                             </div>
                         )}
