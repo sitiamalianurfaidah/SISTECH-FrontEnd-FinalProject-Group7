@@ -2,6 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
+import Image from 'next/image';
+
 
 interface CareerRecommendation {
     title: string;
@@ -97,13 +99,21 @@ export default function ResultPage() {
             <div className="max-w-4xl mx-auto mt-0 px-4 py-8">
                 {/* Header Section: "Top 3 Career Matching You!" dan Podium */}
                 <div className="relative w-full h-[380px] flex flex-col items-center justify-start bg-[#F5F7FA] pb-0">
+                    {/* Lightning kiri */}
+                    <div className="absolute left-[-60] xl:left-[-200px] bottom-50 xl:bottom-30 z-0 shadow-outer">
+                    <Image src="/left-lightning.svg" alt="lightning" width={190} height={190} />
+                    </div>
+
+                    {/* Lightning kanan */}
+                    <div className="absolute right-[-60] xl:right-[-200px] bottom-65 xl:bottom-65 z-0">
+                    <Image src="/right-lightning.svg" alt="lightning" width={180} height={180} />
+                    </div>
                     {/* Teks "Top 3 Career Matching You!" */}
-                    <div className="relative z-10 text-center mb-8 pt-0"> {/* Padding top agar tidak terlalu mepet Navbar */}
+                    <div className="relative z-10 text-center ml-30 xl:ml-70 mr-30 xl:mr-70 mt-0 mb-7 pt-0"> {/* Padding top agar tidak terlalu mepet Navbar */}
                         <h1 className="relative z-10 text-4xl font-extrabold mb-10 text-[#112A46]">
                         Top 3 <span className="text-[#003E85]">Career</span> Matching You!
                         </h1>
                     </div>
-
                     {/* Container untuk podium karier dengan SVG */}
                     <div className="flex justify-center items-end gap-0 h-40 mt-10 mb-0">
                     {/* Career 2 */}
@@ -144,51 +154,51 @@ export default function ResultPage() {
                     )}
                     </div>
                 </div>
-
-                {/* Description / Training Tabs menggunakan SVG */}
-                <div className="flex justify-center mt-0 gap-4">
-                <button
+                {/* Description / Training Tabs Card */}
+                <div className="flex justify-center mt-5 xl:mt-8">
+                <div className="bg-white shadow-md rounded-full px-3 py-2 flex gap-3">
+                    <button
                     onClick={() => setActiveTab('description')}
-                    className={`px-6 py-2 rounded-full font-semibold border transition duration-300 ${
-                    activeTab === 'description'
-                        ? 'bg-[#FFD000] text-white border-yellow-400'
-                        : 'bg-white text-gray-800 border-gray-300 hover:bg-[#FFF5CC]'
-                    }`}
-                >
+                    className={`px-20 py-2 rounded-full font-semibold transition duration-300
+                        ${activeTab === 'description'
+                        ? 'bg-[#FFD000] text-[#000000]'
+                        : 'text-[#000000] hover:bg-[#FFF5CC]'
+                        }`}
+                    >
                     Description
-                </button>
-                <button
+                    </button>
+                    <button
                     onClick={() => setActiveTab('training')}
-                    className={`px-6 py-2 rounded-full font-semibold border transition duration-300 ${
-                    activeTab === 'training'
-                        ? 'bg-[#FFD000] text-white border-yellow-400'
-                        : 'bg-white text-gray-800 border-gray-300 hover:bg-[#FFF5CC]'
-                    }`}
-                >
+                    className={`px-20 py-2 rounded-full font-semibold transition duration-300
+                        ${activeTab === 'training'
+                        ? 'bg-[#FFD000] text-[#000000]'
+                        : 'text-[#000000] hover:bg-[#FFF5CC]'
+                        }`}
+                    >
                     Training
-                </button>
+                    </button>
+                </div>
                 </div>
                 {/* Main Content Area - Hanya tampilkan jika selectedCareer ada */}
                 {selectedCareer && (
-                    <div className="bg-white p-8 rounded-lg shadow-md mb-8 mt-10"> {/* Menambahkan margin-top */}
+                    <div className="bg-[#F5F7FA] p-8 rounded-lg mb-8 mt-10"> {/* Menambahkan margin-top */}
                         {/* Konten untuk tab Description */}
                         {activeTab === 'description' && (
                             <div className="space-y-8">
                                 {/* Deskripsi Umum Karier */}
                                 <div>
-                                    <h2 className="text-3xl font-bold text-gray-800 mb-4">{selectedCareer.title}</h2>
-                                    <div className="bg-[#FFFAE6] p-4 rounded-md">
+                                    <h2 className="text-3xl font-bold text-[#002C5E] mb-3">{selectedCareer.title}</h2>
+                                    <div className="bg-[#FFFAE6] p-6 rounded-md shadow-inner shadow-[#fff1b0c3]">
                                         <p className="text-lg text-gray-700 leading-relaxed">
                                             <strong className="font-semibold">{selectedCareer.title} </strong>
-                                            adalah {selectedCareer.what_they_do}. {selectedCareer.description}
+                                            adalah {selectedCareer.what_they_do} {selectedCareer.description}
                                         </p>
                                     </div>
                                 </div>
 
                                 {/* Deskripsi Pekerjaan (On The Job) */}
-                                <div className="bg-[#FFFAE6] p-6 rounded-md shadow-inner">
-                                    <h3 className="text-xl font-bold text-gray-800 mb-3">Deskripsi Pekerjaan</h3>
-                                    <ul className="list-disc list-inside text-lg text-gray-700 space-y-2">
+                                <h2 className="text-2xl font-bold text-[#002C5E] mb-3">Deskripsi Pekerjaan</h2>
+                                <div className="bg-[#FFFAE6] p-6 rounded-md shadow-inner shadow-[#fff1b0c3]">                                    <ul className="list-disc list-inside text-lg text-gray-700 space-y-2">
                                         {selectedCareer.on_the_job.map((task, idx) => (
                                             <li key={idx}>{task}</li>
                                         ))}
@@ -196,16 +206,16 @@ export default function ResultPage() {
                                 </div>
 
                                 {/* Kenapa Karier Ini Cocok Untukmu? */}
-                                <div className="bg-[#FFFAE6] p-6 rounded-md shadow-inner">
-                                    <h3 className="text-xl font-bold text-gray-800 mb-3">Kenapa Karier Ini Cocok Untukmu?</h3>
+                                <h2 className="text-2xl font-bold text-[#002C5E] mb-3">Kenapa Karier Ini Cocok Untukmu?</h2>
+                                <div className="bg-[#FFFAE6] p-6 rounded-md shadow-inner shadow-[#fff1b0c3]">
                                     <p className="text-lg text-gray-700 leading-relaxed">
                                         Kamu menyukai ilmu pengetahuan, memiliki empati yang tinggi, dan senang membantu orang lain secara langsung, maka menjadi <strong className="font-semibold">{selectedCareer.title}</strong> adalah pilihan yang tepat. Karier ini membutuhkan ketelitian, keseksamaan dan kemampuan komunikasi yang baik, yang sesuai dengan hasil quismu.
                                     </p>
                                 </div>
 
                                 {/* Prospek Kedepan */}
-                                <div className="bg-[#FFFAE6] p-6 rounded-md shadow-inner">
-                                    <h3 className="text-xl font-bold text-gray-800 mb-3">Prospek Kedepan</h3>
+                                <h2 className="text-2xl font-bold text-[#002C5E] mb-3">Prospek Kedepan</h2>
+                                <div className="bg-[#FFFAE6] p-6 rounded-md shadow-inner shadow-[#fff1b0c3]">
                                     <p className="text-lg text-gray-700 mb-2">{selectedCareer.job_outlook.description}</p>
                                 </div>
                             </div>
