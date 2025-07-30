@@ -11,9 +11,6 @@ const config: Config = {
     theme: {
         extend: {
         fontFamily: {
-            'archivo-expanded': ['"Archivo Expanded"', 'sans-serif'],
-            'space-grotesk': ['"Space Grotesk"', 'sans-serif'],
-            'space-mono': ['"Space Mono"', 'monospace'],
         },
         colors: {
             'dark-blue': '#003E85',
