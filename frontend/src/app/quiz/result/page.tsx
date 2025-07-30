@@ -27,12 +27,6 @@ export default function ResultPage() {
     const [error, setError] = useState<string | null>(null);
     const [selectedCareerIndex, setSelectedCareerIndex] = useState<number | null>(0); // Default ke karier pertama (index 0)
     const [activeTab, setActiveTab] = useState<'description' | 'training'>('description'); // State untuk tab Description/Training
-    const [isMounted, setIsMounted] = useState(false);
-
-    useEffect(() => {
-    const timer = setTimeout(() => setIsMounted(true), 100); // delay kecil biar animasi jalan
-    return () => clearTimeout(timer);
-    }, []);
     
     useEffect(() => {
         const fetchResults = async () => {
@@ -67,6 +61,12 @@ export default function ResultPage() {
     const selectedCareer = selectedCareerIndex !== null && recommendations.length > selectedCareerIndex
         ? recommendations[selectedCareerIndex]
         : null;
+
+    const uncapitalizeWords = (arr: string[]): string => {
+    return arr
+        .map((word: string) => word.charAt(0).toLowerCase() + word.slice(1))
+        .join(', ');
+    };
 
     if (loading) {
         return (
@@ -181,49 +181,48 @@ export default function ResultPage() {
                 </div>
                 {/* Main Content Area - Hanya tampilkan jika selectedCareer ada */}
                 {selectedCareer && (
-                    <div className="bg-[#F5F7FA] p-8 rounded-lg mb-8 mt-10"> {/* Menambahkan margin-top */}
-                        {/* Konten untuk tab Description */}
+                    <div className="bg-[#F5F7FA] p-8 pl-0 pr-0 rounded-lg mb-8 mt-8"> {/* Menambahkan margin-top */}
+                        {/* Content for Description tab */}
                         {activeTab === 'description' && (
-                            <div className="space-y-8">
-                                {/* Deskripsi Umum Karier */}
-                                <div>
-                                    <h2 className="text-3xl font-bold text-[#002C5E] mb-3">{selectedCareer.title}</h2>
-                                    <div className="bg-[#FFFAE6] p-6 rounded-md shadow-inner shadow-[#fff1b0c3]">
-                                        <p className="text-lg text-gray-700 leading-relaxed">
-                                            <strong className="font-semibold">{selectedCareer.title} </strong>
-                                            adalah {selectedCareer.what_they_do} {selectedCareer.description}
-                                        </p>
-                                    </div>
-                                </div>
-
-                                {/* Deskripsi Pekerjaan (On The Job) */}
-                                <h2 className="text-2xl font-bold text-[#002C5E] mb-3">Deskripsi Pekerjaan</h2>
-                                <div className="bg-[#FFFAE6] p-6 rounded-md shadow-inner shadow-[#fff1b0c3]">                                    <ul className="list-disc list-inside text-lg text-gray-700 space-y-2">
-                                        {selectedCareer.on_the_job.map((task, idx) => (
-                                            <li key={idx}>{task}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                {/* Kenapa Karier Ini Cocok Untukmu? */}
-                                <h2 className="text-2xl font-bold text-[#002C5E] mb-3">Kenapa Karier Ini Cocok Untukmu?</h2>
-                                <div className="bg-[#FFFAE6] p-6 rounded-md shadow-inner shadow-[#fff1b0c3]">
-                                    <p className="text-lg text-gray-700 leading-relaxed">
-                                        Kamu menyukai ilmu pengetahuan, memiliki empati yang tinggi, dan senang membantu orang lain secara langsung, maka menjadi <strong className="font-semibold">{selectedCareer.title}</strong> adalah pilihan yang tepat. Karier ini membutuhkan ketelitian, keseksamaan dan kemampuan komunikasi yang baik, yang sesuai dengan hasil quismu.
-                                    </p>
-                                </div>
-
-                                {/* Prospek Kedepan */}
-                                <h2 className="text-2xl font-bold text-[#002C5E] mb-3">Prospek Kedepan</h2>
-                                <div className="bg-[#FFFAE6] p-6 rounded-md shadow-inner shadow-[#fff1b0c3]">
-                                    <p className="text-lg text-gray-700 mb-2">{selectedCareer.job_outlook.description}</p>
-                                </div>
+                        <div className="space-y-8">
+                            {/* Career Overview */}
+                            <div>
+                            <h2 className="text-2xl font-bold text-[#002C5E] mb-3">{selectedCareer.title}</h2>
+                            <div className="bg-[#FFFAE6] p-6 rounded-2xl shadow-inner shadow-[#fff1b0c3]">
+                                <p className="text-lg text-gray-700 leading-relaxed">
+                                <strong className="font-semibold">{selectedCareer.title}</strong> is {selectedCareer.what_they_do} {selectedCareer.description}
+                                </p>
                             </div>
-                        )}
+                            </div>
 
+                            {/* On The Job Description */}
+                            <h2 className="text-2xl font-bold text-[#002C5E] mb-3">Job Description</h2>
+                            <div className="bg-[#FFFAE6] p-6 rounded-2xl shadow-inner shadow-[#fff1b0c3]">
+                            <ul className="list-disc list-inside text-lg text-gray-700 space-y-2">
+                                {selectedCareer.on_the_job.map((task, idx) => (
+                                <li key={idx}>{task}</li>
+                                ))}
+                            </ul>
+                            </div>
+
+                            {/* Why This Career Suits You */}
+                            <h2 className="text-2xl font-bold text-[#002C5E] mb-3">Why This Career Suits You</h2>
+                            <div className="bg-[#FFFAE6] p-6 rounded-md shadow-inner shadow-[#fff1b0c3]">
+                            <p className="text-lg text-gray-700 leading-relaxed">
+                                Based on your results, you are likely to thrive in a career that values {uncapitalizeWords(selectedCareer.skills)} and relies heavily on your {uncapitalizeWords(selectedCareer.abilities)}. Your strong foundation in {uncapitalizeWords(selectedCareer.knowledge)} aligns perfectly with the role of a <strong>{selectedCareer.title}</strong>, making this a great fit for your strengths and interests.
+                            </p>
+                            </div>
+
+                            {/* Future Outlook */}
+                            <h2 className="text-2xl font-bold text-[#002C5E] mb-3">Future Outlook</h2>
+                            <div className="bg-[#FFFAE6] p-6 rounded-2xl shadow-inner shadow-[#fff1b0c3]">
+                            <p className="text-lg text-gray-700 mb-2">{selectedCareer.job_outlook.description}</p>
+                            </div>
+                        </div>
+                        )}
                         {/* Konten untuk tab Training (Placeholder) */}
                         {activeTab === 'training' && (
-                            <div className="bg-[#F0F8FF] p-6 rounded-lg shadow-inner text-center">
+                            <div className="bg-[#F0F8FF] p-6 rounded-2xl shadow-inner text-center">
                                 <h3 className="text-2xl font-bold text-gray-800 mb-3">Informasi Pelatihan untuk {selectedCareer.title}</h3>
                                 <p className="text-lg text-gray-700">
                                     Informasi pelatihan terkait karier ini akan ditampilkan di sini.

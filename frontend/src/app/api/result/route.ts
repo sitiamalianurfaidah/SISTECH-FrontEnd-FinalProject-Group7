@@ -18,9 +18,9 @@ export async function GET() {
             what_they_do:
             'Analyze statistical data to forecast risk and liability for future benefits.',
             on_the_job: [
-                "Develop or use mathematical or computer models for weather forecasting.",
-                "Interpret data, reports, maps, photographs, or charts to predict long- or short-range weather conditions, using computer models and knowledge of climate theory, physics, and mathematics.",
-                "Conduct meteorological research into the processes or determinants of atmospheric phenomena, weather, or climate."
+                "Ascertain premium rates required and cash reserves and liabilities necessary to ensure payment of future benefits.",
+                "Collaborate with programmers, underwriters, accounts, claims experts, and senior management to help companies develop plans for new lines of business or improvements to existing business.",
+                "Analyze statistical information to estimate mortality, accident, sickness, disability, and retirement rates."
             ],
             skills: ['Statistical analysis', 'Problem-solving', 'Attention to detail'],
             abilities: ['Math reasoning', 'Critical thinking', 'Written communication'],
@@ -54,9 +54,9 @@ export async function GET() {
             what_they_do:
             'Design and test aircraft, missiles, and spacecraft, and recommend improvements.',
             on_the_job: [
-            "Design aircraft components using CAD tools.",
-            "Test prototypes and analyze performance data.",
-            "Collaborate with other engineers to solve technical issues."
+                "Formulate mathematical models or other methods of computer analysis to develop, evaluate, or modify design, according to customer engineering requirements.",
+                "Plan or conduct experimental, environmental, operational, or stress tests on models or prototypes of aircraft or aerospace systems or equipment.",
+                "Formulate conceptual design of aeronautical or aerospace products or systems to meet customer requirements or conform to environmental regulations."
             ],
             skills: ['Engineering design', 'Problem-solving', 'Technical evaluation'],
             abilities: ['Math', 'Spatial reasoning', 'Technical communication'],
