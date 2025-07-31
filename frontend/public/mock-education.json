@@ -1,0 +1,23 @@
+{
+    "request_id": 1,
+    "recommendations": [
+        {
+            "university": "universitas indonesia",
+            "program": "administrasi asuransi aktuaria",
+            "rank": 1,
+            "score": 1.075380563735962
+        },
+        {
+            "university": "institut teknologi sepuluh nopember",
+            "program": "statistika bisnis",
+            "rank": 6,
+            "score": 1.1061787605285645
+        },
+        {
+            "university": "universitas islam indonesia",
+            "program": "analisis keuangan",
+            "rank": 25,
+            "score": 1.1426286697387695
+        }
+    ]
+}

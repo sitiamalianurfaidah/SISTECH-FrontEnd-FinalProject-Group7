@@ -1,0 +1,20 @@
+{
+    "request_id": 1,
+    "articles": [
+        {
+            "title": "Actuaries : Occupational Outlook Handbook: : U.S. Bureau of Labor ...",
+            "link": "https://www.bls.gov/ooh/math/actuaries.htm",
+            "snippet": "They must have a strong background in mathematics, statistics, and business. Pay. The median annual wage for actuaries was $125,770 in May 2024. Job Outlook."
+        },
+        {
+            "title": "Careers in Science, Technology ... - Career Cornerstone Center",
+            "link": "https://www.careercornerstone.org/actuarialscience/actscicpfc.htm",
+            "snippet": "... Employment - Career Path Forecast - Professional ... Job opportunities should be somewhat favorable for applicants interested in an actuarial career."
+        },
+        {
+            "title": "Industry and occupational employment projections overview and ...",
+            "link": "https://www.bls.gov/opub/mlr/2023/article/industry-and-occupational-employment-projections-overview-and-highlights-2022-32.htm",
+            "snippet": "The retail trade and manufacturing sectors account for the bulk of the projected job losses from 2022 to 2032. The U.S. Bureau of Labor Statistics (BLS) ..."
+        }
+    ]
+}

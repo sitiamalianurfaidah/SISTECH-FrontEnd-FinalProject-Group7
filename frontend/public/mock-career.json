@@ -1,0 +1,199 @@
+{
+    "request_id": 1,
+    "recommendations": [
+        {
+            "code": "15-2011.00",
+            "title": "Actuaries",
+            "also_called": [
+                "Actuarial Analyst",
+                "Actuary",
+                "Consulting Actuary",
+                "Pricing Actuary"
+            ],
+            "what_they_do": "Analyze statistical data, such as mortality, accident, sickness, disability, and retirement rates and construct probability tables to forecast risk and liability for payment of future benefits. May ascertain insurance rates required and cash reserves necessary to ensure payment of future benefits.",
+            "on_the_job": [
+                "Ascertain premium rates required and cash reserves and liabilities necessary to ensure payment of future benefits.",
+                "Collaborate with programmers, underwriters, accounts, claims experts, and senior management to help companies develop plans for new lines of business or improvements to existing business.",
+                "Analyze statistical information to estimate mortality, accident, sickness, disability, and retirement rates."
+            ],
+            "knowledges": [
+                "Math and Science",
+                "arithmetic, algebra, geometry, calculus, or statistics",
+                "Engineering and Technology",
+                "computers and electronics",
+                "Business",
+                "accounting and economics",
+                "Arts and Humanities",
+                "English language"
+            ],
+            "skills": [
+                "Basic Skills",
+                "reading work related information",
+                "thinking about the pros and cons of different ways to solve a problem",
+                "People and Technology Systems",
+                "thinking about the pros and cons of different options and picking the best one",
+                "measuring how well a system is working and how to improve it",
+                "Problem Solving",
+                "noticing a problem and figuring out the best way to solve it"
+            ],
+            "abilities": [
+                "Math",
+                "choose the right type of math to solve a problem",
+                "add, subtract, multiply, or divide",
+                "Verbal",
+                "communicate by speaking",
+                "communicate by writing",
+                "Ideas and Logic",
+                "make general rules or come up with answers from lots of detailed information",
+                "group things in different ways"
+            ],
+            "technologies": [
+                "Data base user interface and query software",
+                "Microsoft SQL Server",
+                "Oracle Database",
+                "Presentation software",
+                "Microsoft PowerPoint",
+                "Financial analysis software",
+                "Oak Mountain Software AnnuityValue",
+                "Pricing software"
+            ],
+            "job_outlook": {
+                "description": "New job opportunities are very likely in the future.",
+                "category": "Bright"
+            },
+            "text": "actuary actuarial analyst actuary consulting actuary pricing actuary analyze statistical data mortality accident sickness disability retirement rate construct probability table forecast risk liability payment future benefit may ascertain insurance rate required cash reserve necessary ensure payment future benefit ascertain premium rate required cash reserve liability necessary ensure payment future benefit collaborate programmer underwriter account claim expert senior management help company develop plan new line business improvement existing business analyze statistical information estimate mortality accident sickness disability retirement rate actuarial science statistical analysis risk assessment financial modeling data interpretation problemsolving attention detail financial risk analysis insurance modeling mathematical modeling finance forecasting simulation pension retirement planning datadriven decision making",
+            "score": 0.5730783939361572
+        },
+        {
+            "code": "19-2021.00",
+            "title": "Atmospheric & Space Scientists",
+            "also_called": [
+                "Forecaster",
+                "General Forecaster",
+                "Meteorologist",
+                "Research Meteorologist"
+            ],
+            "what_they_do": "Investigate atmospheric phenomena and interpret meteorological data, gathered by surface and air stations, satellites, and radar to prepare reports and forecasts for public and other uses. Includes weather analysts and forecasters whose functions require the detailed knowledge of meteorology.",
+            "on_the_job": [
+                "Develop or use mathematical or computer models for weather forecasting.",
+                "Interpret data, reports, maps, photographs, or charts to predict long- or short-range weather conditions, using computer models and knowledge of climate theory, physics, and mathematics.",
+                "Conduct meteorological research into the processes or determinants of atmospheric phenomena, weather, or climate."
+            ],
+            "knowledges": [
+                "Math and Science",
+                "arithmetic, algebra, geometry, calculus, or statistics",
+                "physics",
+                "Engineering and Technology",
+                "computers and electronics",
+                "Arts and Humanities",
+                "English language",
+                "Communications",
+                "multimedia"
+            ],
+            "skills": [
+                "Basic Skills",
+                "reading work related information",
+                "figuring out how to use new ideas or things",
+                "Problem Solving",
+                "noticing a problem and figuring out the best way to solve it",
+                "People and Technology Systems",
+                "thinking about the pros and cons of different options and picking the best one",
+                "figuring out how a system should work and how changes in the future will affect it"
+            ],
+            "abilities": [
+                "Verbal",
+                "communicate by speaking",
+                "listen and understand what people say",
+                "Ideas and Logic",
+                "make general rules or come up with answers from lots of detailed information",
+                "use rules to solve problems",
+                "Math",
+                "choose the right type of math to solve a problem",
+                "add, subtract, multiply, or divide",
+                "Visual Understanding",
+                "see hidden patterns"
+            ],
+            "technologies": [
+                "Analytical or scientific software",
+                "IBM SPSS Statistics",
+                "SAS",
+                "Presentation software",
+                "Microsoft PowerPoint",
+                "Graphics or photo imaging software",
+                "Adobe Photoshop",
+                "Microsoft Paint"
+            ],
+            "job_outlook": {
+                "description": "New job opportunities are very likely in the future.",
+                "category": "Bright"
+            },
+            "text": "atmospheric space scientist forecaster general forecaster meteorologist research meteorologist investigate atmospheric phenomenon interpret meteorological data gathered surface air station satellite radar prepare report forecast public us includes weather analyst forecaster whose function require detailed knowledge meteorology develop use mathematical computer model weather forecasting interpret data report map photograph chart predict long shortrange weather condition using computer model knowledge climate theory physic mathematics conduct meteorological research process determinant atmospheric phenomenon weather climate actuarial science statistical analysis risk assessment financial modeling data interpretation problemsolving attention detail financial risk analysis insurance modeling mathematical modeling finance forecasting simulation pension retirement planning datadriven decision making",
+            "score": 1.3238592147827148
+        },
+        {
+            "code": "17-2011.00",
+            "title": "Aerospace Engineers",
+            "also_called": [
+                "Aerospace Engineer",
+                "Design Engineer",
+                "Flight Test Engineer",
+                "Systems Engineer"
+            ],
+            "what_they_do": "Perform engineering duties in designing, constructing, and testing aircraft, missiles, and spacecraft. May conduct basic and applied research to evaluate adaptability of materials and equipment to aircraft design and manufacture. May recommend improvements in testing equipment and techniques.",
+            "on_the_job": [
+                "Formulate mathematical models or other methods of computer analysis to develop, evaluate, or modify design, according to customer engineering requirements.",
+                "Plan or conduct experimental, environmental, operational, or stress tests on models or prototypes of aircraft or aerospace systems or equipment.",
+                "Formulate conceptual design of aeronautical or aerospace products or systems to meet customer requirements or conform to environmental regulations."
+            ],
+            "knowledges": [
+                "Engineering and Technology",
+                "product and service development",
+                "design",
+                "Math and Science",
+                "arithmetic, algebra, geometry, calculus, or statistics",
+                "physics",
+                "Arts and Humanities",
+                "English language",
+                "Manufactured or Agricultural Goods",
+                "manufacture and distribution of products"
+            ],
+            "skills": [
+                "Basic Skills",
+                "thinking about the pros and cons of different ways to solve a problem",
+                "reading work related information",
+                "Problem Solving",
+                "noticing a problem and figuring out the best way to solve it",
+                "People and Technology Systems",
+                "thinking about the pros and cons of different options and picking the best one",
+                "measuring how well a system is working and how to improve it"
+            ],
+            "abilities": [
+                "Verbal",
+                "read and understand what is written",
+                "communicate by speaking",
+                "Ideas and Logic",
+                "make general rules or come up with answers from lots of detailed information",
+                "notice when problems happen",
+                "Math",
+                "choose the right type of math to solve a problem",
+                "add, subtract, multiply, or divide"
+            ],
+            "technologies": [
+                "Analytical or scientific software",
+                "The MathWorks MATLAB",
+                "Wolfram Research Mathematica",
+                "Presentation software",
+                "Microsoft PowerPoint",
+                "Development environment software",
+                "C",
+                "Microsoft Visual Studio"
+            ],
+            "job_outlook": {
+                "description": "New job opportunities are very likely in the future.",
+                "category": "Bright"
+            },
+            "text": "aerospace engineer aerospace engineer design engineer flight test engineer system engineer perform engineering duty designing constructing testing aircraft missile spacecraft may conduct basic applied research evaluate adaptability material equipment aircraft design manufacture may recommend improvement testing equipment technique formulate mathematical model method computer analysis develop evaluate modify design according customer engineering requirement plan conduct experimental environmental operational stress test model prototype aircraft aerospace system equipment formulate conceptual design aeronautical aerospace product system meet customer requirement conform environmental regulation actuarial science statistical analysis risk assessment financial modeling data interpretation problemsolving attention detail financial risk analysis insurance modeling mathematical modeling finance forecasting simulation pension retirement planning datadriven decision making",
+            "score": 1.3478338718414307
+        }
+    ]
+}

@@ -1,0 +1,94 @@
+{
+    "request_id": 1,
+    "recommendations": [
+        {
+            "link": "https://id.linkedin.com/jobs/view/financial-analyst-at-syntek-energy-control-4255546263",
+            "title": "Financial Analyst",
+            "company_name": "Syntek Energy & Control",
+            "location": "Jakarta Metropolitan Area",
+            "responsibilities": [
+                "Monitoring accurate records, both payable and receivables and ensure all transaction is reconciled for monthly end closing",
+                "Assist manager to prepare and deliver timely, accurate, and comprehensive financial reports for internal and/or external stakeholders such as profitability, balance sheet, cashflow projection, and financial ratio",
+                "Identify trends, variances between realization cost vs operational budget expenditure",
+                "Assist manager in corporate budgeting & cost accounting",
+                "Ensure compliance with accounting principles, legal requirements, and company policies"
+            ],
+            "requirements": [
+                "Bachelor's degree in Accounting",
+                "Mandatory experience 2 years minimum in KAP (Public Auditor Firm)",
+                "Good communication, well-mannered, straight to the point, proactive",
+                "Good analytical thinking and problem-solver",
+                "Able to work under minimum supervision and under high pressure",
+                "Good proficiency in google spreadsheet and Ms. excel",
+                "Solid understanding of SAK"
+            ],
+            "level": "Associate",
+            "employment_type": "Full-time",
+            "job_function": "Finance, Analyst, and Administrative",
+            "industries": "Renewable Energy Semiconductor Manufacturing, Electrical Equipment Manufacturing, and Construction",
+            "time_posted": "3 weeks ago",
+            "num_applicants": "",
+            "score": 0.7064650654792786
+        },
+        {
+            "link": "https://id.linkedin.com/jobs/view/senior-corporate-planning-analyst-at-asuransi-astra-4205092771",
+            "title": "Senior Corporate Planning Analyst",
+            "company_name": "Asuransi Astra",
+            "location": "Jakarta, Jakarta, Indonesia",
+            "responsibilities": [
+                "Plan: Gather the data from all business unit",
+                "Do: (a) Ensure there is alignment between management strategy and business units; (b) Identifying, compiling reports, and analyze company business data activities so that it can be evaluated by management; (c) Ensure the data or information that will be processed into reports for management is correct and accurate.",
+                "Check: Prepare monthly review with every business unit to plan activities to achieve company's business targets.",
+                "Action: Ensure the implementation of the planned activities and provide suggestion to business units that need correction so that they can achieve optimal targets."
+            ],
+            "requirements": [
+                "Bachelor's Degree (S1): Any Major",
+                "Minimum experiences: 6 years of relevant work experiences (Financial services industries or consulting firms, with expertise in corporate planing considered advantageous)",
+                "Maximum work experiences: 9 years",
+                "Proficiency in english (passive & active)",
+                "Familiarity with the latest trends and developments in the financial services industry especially in general insurance industry",
+                "Have an excellent in: (a) Data analysis, financial modeling, and able to derive actionable insights from complex data sets; (b) Using relevant planning and analysis tools; (c) Knowledge of industry-standard software and technologies; (d) Able to adapt to changing business environments and priorities.",
+                "Have a strong communication and presentation skills (written & verbal: is a must) to present a complex information to diverse BOD level.",
+                "Have an experiences in leading or collaborate with cross-functional teams/projects"
+            ],
+            "level": "Associate",
+            "employment_type": "Full-time",
+            "job_function": "Business Development and Sales",
+            "industries": "Insurance",
+            "time_posted": "3 months ago",
+            "num_applicants": "",
+            "score": 0.7289395332336426
+        },
+        {
+            "link": "https://id.linkedin.com/jobs/view/risk-corporate-risk-spx-express-at-shopee-4260955029",
+            "title": "Risk - Corporate Risk, SPX Express",
+            "company_name": "Shopee",
+            "location": "Jakarta, Indonesia",
+            "responsibilities": [
+                "Plan and conduct risk-based reviews/audits of end-to-end business processes",
+                "Identify, assess, and test business processes for potential risks and control deficiencies",
+                "Provide cost-effective recommendations to mitigate business risks and strengthen internal controls",
+                "Identify areas of risk within the organization and propose mitigation strategies",
+                "Assist team lead to prepare detailed rewiew/audit reports with findings and recommendations for management presentation",
+                "Collaborate with various departments to develop action plans and monitor the implementation of the action plans",
+                "Conduct investigation on breach of internal controls and fraud cases/incidents"
+            ],
+            "requirements": [
+                "Bachelor degree with background financial, accounting, economics, or equivalent",
+                "3-5 years of audit/risk experience in the big four public accounting firm or consulting firm, or internal audit experience in logistic company",
+                "Professional certification (CIA, QIA, CFE, CFrA, CRMO, CRMP, etc.) will be a plus",
+                "Strong knowledge of risk/audit standards, procedures, and regulations",
+                "Strong critical thinking, analytical thinking, data analysis, and problem solving skills",
+                "Attention to details and high standard of integrity & ethics",
+                "Willingness to travel around Indonesia (if required)"
+            ],
+            "level": "Mid-Senior level",
+            "employment_type": "Full-time",
+            "job_function": "Administrative",
+            "industries": "Internet Marketplace Platforms and Technology, Information and Internet",
+            "time_posted": "1 week ago",
+            "num_applicants": "69 applicants",
+            "score": 0.7274198532104492
+        }
+    ]
+}

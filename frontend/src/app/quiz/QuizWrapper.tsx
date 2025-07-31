@@ -129,51 +129,65 @@ const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
             throw new Error("API URL is not defined in environment variables.");
         }
 
-        console.log("Payload yang dikirim:", payloadCareer);
-
-        const res = await fetch(`${apiUrl}/recommend-careers`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payloadCareer),
-        });
-
-        if (!res.ok) {
-            throw new Error(`HTTP error! status: ${res.status}`);
-        }
+        const res = await fetch('/mock-career.json');
         const careerData = await res.json();
-        console.log("Backend response:", careerData);
 
-        const educationRes = await fetch(`${apiUrl}/recommend-programs`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(textQueryPayload),
-        });
+        const educationRes = await fetch('/mock-education.json');
         const educationData = await educationRes.json();
-        console.log("Backend response:", educationData);
 
-        const articlesRes = await fetch(`${apiUrl}/get-job-articles`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(textQueryPayload),
-        });
-        const articlesData = await articlesRes.json();
-        console.log("Backend response:", articlesData);
-
-        const coursesRes = await fetch(`${apiUrl}/recommend-courses`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(textQueryPayload),
-        });
+        const coursesRes = await fetch('/mock-courses.json');
         const coursesData = await coursesRes.json();
-        console.log("Backend response:", coursesData);
 
-        const jobsRes = await fetch(`${apiUrl}/recommend-jobs`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(textQueryPayload),
-        });
+        const jobsRes = await fetch('/mock-jobs.json');
         const jobsData = await jobsRes.json();
-        console.log("Backend response:", jobsData);
+
+        const articlesRes = await fetch('/mock-articles.json');
+        const articlesData = await articlesRes.json();
+
+        // const res = await fetch(`/mock/career`, {
+        //     method: "POST",
+        //     headers: { "Content-Type": "application/json" },
+        //     body: JSON.stringify(payloadCareer),
+        // });
+
+        // if (!res.ok) {
+        //     throw new Error(`HTTP error! status: ${res.status}`);
+        // }
+        // const careerData = await res.json();
+        // console.log("Backend response:", careerData);
+
+        // const educationRes = await fetch(`/mock/education`, {
+        //     method: "POST",
+        //     headers: { "Content-Type": "application/json" },
+        //     body: JSON.stringify(textQueryPayload),
+        // });
+        // const educationData = await educationRes.json();
+        // console.log("Backend response:", educationData);
+        
+
+        // const articlesRes = await fetch(`${apiUrl}/get-job-articles`, {
+        //     method: "POST",
+        //     headers: { "Content-Type": "application/json" },
+        //     body: JSON.stringify(textQueryPayload),
+        // });
+        // const articlesData = await articlesRes.json();
+        // console.log("Backend response:", articlesData);
+
+        // const coursesRes = await fetch(`/mock/courses`, {
+        //     method: "POST",
+        //     headers: { "Content-Type": "application/json" },
+        //     body: JSON.stringify(textQueryPayload),
+        // });
+        // const coursesData = await coursesRes.json();
+        // console.log("Backend response:", coursesData);
+
+        // const jobsRes = await fetch(`/mock/jobs`, {
+        //     method: "POST",
+        //     headers: { "Content-Type": "application/json" },
+        //     body: JSON.stringify(textQueryPayload),
+        // });
+        // const jobsData = await jobsRes.json();
+        // console.log("Backend response:", jobsData);
 
         localStorage.setItem("riasecScores", JSON.stringify(scores));
         localStorage.setItem("recommendations", JSON.stringify(careerData));
@@ -184,7 +198,7 @@ const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
 
         router.push("/quiz/result");
         } catch (error) {
-        console.error("Failed to submit scores", error);
+            console.error("Terjadi kesalahan saat push router:", error);
         }
     };
 

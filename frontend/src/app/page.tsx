@@ -15,7 +15,7 @@ const Home = () => {
     <>
       <Head>
         <meta name="description" content="Identify your perfect profession based on your personality" />
-        <title>Discover Your Ideal Career</title>
+        <title>PathMatch</title>
       </Head>
       {/* Background utama putih */}
       <div className="h-screen bg-[#F5F7FA] text-white">
