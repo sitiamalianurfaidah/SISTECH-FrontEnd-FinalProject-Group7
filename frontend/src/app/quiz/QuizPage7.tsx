@@ -154,8 +154,8 @@ const QuizPage7: React.FC<QuizPage7Props> = ({
             return (
                 <div
                 key={q.id}
-                className={`rounded-xl px-6 py-4 transition-colors ${
-                    isAnswered ? 'bg-[#003E85] text-white' : 'bg-white text-black shadow-sm'
+                className={`rounded-3xl px-6 py-4 transition-colors ${
+                    isAnswered ? 'bg-[#003E85] text-[#F5F5F5]' : 'bg-[#F5F5F5] text-black shadow-sm border border-[#00000027]'
                 }`}
                 >
                 <div
@@ -177,7 +177,7 @@ const QuizPage7: React.FC<QuizPage7Props> = ({
                         key={idx}
                         onClick={() => handleSelect(i, idx, q.multiple)}
                         className={`w-full flex items-center gap-3 px-4 py-2 rounded-md transition-all ${
-                            isSelected ? 'bg-[#003E85] text-white' : 'bg-gray-100 text-black'
+                            isSelected ? 'bg-[#003E85] text-[#F5F5F5]' : 'bg-[#F5F5F5] text-black border border-[#00000027]'
                         }`}
                         >
                         <Image

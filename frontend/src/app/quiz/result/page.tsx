@@ -209,9 +209,21 @@ export default function ResultPage() {
                         {/* Content for Description tab */}
                         {activeTab === 'description' && (
                         <div className="space-y-8">
+                            {/* Image Section */}
+                            <div className="flex justify-center mt-[20px] mb-15"> {/* Adjust margin-top to position correctly */}
+                                <Image
+                                    src="/cover.jpg" // Replace with the actual path to your doctor image
+                                    alt="Cover"
+                                    width={1000} // Adjust width as needed
+                                    height={700} // Adjust height as needed
+                                    objectFit="cover" // Cover the area, cropping if necessary
+                                    className="rounded-xl shadow-lg" // Add some styling
+                                />
+                            </div>
+
                             {/* Career Overview */}
                             <div>
-                            <h2 className="text-2xl font-bold text-[#002C5E] mb-3">{selectedCareer.title}</h2>
+                            <h2 className="text-3xl font-bold text-[#002C5E] mb-3">{selectedCareer.title}</h2>
                             <div className="bg-[#FFFAE6] p-6 rounded-2xl shadow-inner shadow-[#fff1b0c3]">
                                 <p className="text-lg text-gray-700 leading-relaxed">
                                 {selectedCareer.what_they_do} {selectedCareer.description}
@@ -219,8 +231,31 @@ export default function ResultPage() {
                             </div>
                             </div>
 
+                            {/* Level and Gaji per Bulan sections */}
+                                <div className="grid grid-cols-2 gap-8">
+                                    {/* Level */}
+                                    <div>
+                                        <h2 className="text-3xl font-bold text-center text-[#002C5E] mb-0">Level</h2>
+                                        <div className="p-6 rounded-2xl space-y-3 text-center">
+                                            <div className="text-lg text-gray-700">Fresh Graduate</div>
+                                            <div className="text-lg text-gray-700">Dokter Umum Senior</div>
+                                            <div className="text-lg text-gray-700">Dokter Spesialis</div>
+                                        </div>
+                                    </div>
+
+                                    {/* Gaji per Bulan */}
+                                    <div>
+                                        <h2 className="text-3xl font-bold text-center text-[#002C5E] mb-0">Salary</h2>
+                                        <div className="p-6 rounded-2xl space-y-3 text-center">
+                                            <div className="text-lg text-gray-700">Rp6.000.000 - Rp10.000.000</div>
+                                            <div className="text-lg text-gray-700">Rp12.000.000 - Rp25.000.000</div>
+                                            <div className="text-lg text-gray-700">≥ Rp30.000.000</div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             {/* On The Job Description */}
-                            <h2 className="text-2xl font-bold text-[#002C5E] mb-3">Job Description</h2>
+                            <h2 className="text-3xl font-bold text-[#002C5E] mb-3">Job Description</h2>
                             <div className="bg-[#FFFAE6] p-6 rounded-2xl shadow-inner shadow-[#fff1b0c3]">
                             <ul className="list-disc list-inside text-lg text-gray-700 space-y-2">
                                 {selectedCareer.on_the_job.map((task, idx) => (
@@ -230,7 +265,7 @@ export default function ResultPage() {
                             </div>
 
                             {/* Why This Career Suits You */}
-                            <h2 className="text-2xl font-bold text-[#002C5E] mb-3">Why This Career Suits You</h2>
+                            <h2 className="text-3xl font-bold text-[#002C5E] mb-3">Why This Career Suits You</h2>
                             <div className="bg-[#FFFAE6] p-6 rounded-md shadow-inner shadow-[#fff1b0c3]">
                             <p className="text-lg text-gray-700 leading-relaxed">
                                 Based on your results, you are likely to thrive in a career that values {formatList(selectedCareer?.skills)} and relies heavily on your {formatList(selectedCareer?.abilities)}. Your strong foundation in {formatList(selectedCareer?.knowledges)} aligns perfectly with the role of a <strong>{selectedCareer?.title}</strong>, making this a great fit for your strengths and interests.
@@ -239,7 +274,7 @@ export default function ResultPage() {
                             </div>
 
                             {/* Future Outlook */}
-                            <h2 className="text-2xl font-bold text-[#002C5E] mb-3">Future Outlook</h2>
+                            <h2 className="text-3xl font-bold text-[#002C5E] mb-3">Future Outlook</h2>
                             <div className="bg-[#FFFAE6] p-6 rounded-2xl shadow-inner shadow-[#fff1b0c3]">
                             <p className="text-lg text-gray-700 mb-2">{selectedCareer.job_outlook.description}</p>
                             </div>

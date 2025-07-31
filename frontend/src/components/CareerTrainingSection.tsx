@@ -183,7 +183,7 @@ const CareerTrainingSection = ({
         return (
             <div
             key={index}
-            className={`rounded-xl px-6 py-4 transition-colors 
+            className={`rounded-3xl px-6 py-4 transition-colors 
                 ${isOpen 
                 ? 'bg-[#F5F5F5] text-[#003E85] border border-[#00000027]' 
                 : 'bg-[#003E85] text-[#F5F5F5] shadow-sm'}    
