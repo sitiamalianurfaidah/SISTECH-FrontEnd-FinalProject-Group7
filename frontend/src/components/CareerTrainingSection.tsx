@@ -19,8 +19,8 @@ interface TrainingDataProps {
 
 const CareerTrainingSection = ({
     recommendations,
-    articles,
     courses,
+    articles,
     jobs,
     }: TrainingDataProps) => {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -34,12 +34,18 @@ const CareerTrainingSection = ({
             txt.charAt(0).toUpperCase() + txt.slice(1).toLowerCase()
     );
 
+    const trainingCourses = courses.filter(
+    (course) =>
+        course.product?.toLowerCase() === 'course' || 
+        course.product?.toLowerCase() === 'program'
+    );
+
     const sections = [
     {
         title: 'Step 1: Academic Major',
         content: (
         <ul className="space-y-3 text-[#003E85]">
-            {recommendations.map((item, index) => (
+            {recommendations.slice(0, 3).map((item, index) => (
             <li key={index} className="flex items-start gap-3 pb-3 border-b border-[#00000027] last:border-none">
             <svg className="w-2.5 h-2.5 mt-2 shadow-xl shadow-amber-900 text-[#FFD000]" viewBox="0 0 10 10" fill="currentColor">
                 <circle cx="5" cy="5" r="5" />
@@ -57,10 +63,45 @@ const CareerTrainingSection = ({
         ),
     },
     {
-        title: 'Step 2: Training',
+    title: 'Step 2: Training and Certification',
+    content: (
+        <ul className="space-y-6 text-[#003E85]">
+        {trainingCourses.slice(0, 3).map((course, index) => (
+            <li key={index} className="flex gap-3 items-start border-b border-[#00000027] pb-6 last:border-none">
+            <div className="space-y-2">
+                <div>
+                <a
+                    href={course.marketing_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#003E85] text-xl font-bold hover:underline hover:text-[#002E60] transition-colors duration-200"
+                >
+                    {course.title}
+                </a>
+                <div className="text-md font-semibold text-[#4F647A] mt-1">
+                    by {course.partner}
+                </div>
+                <span className="bg-[#FFD000] text-[#003E85] px-2 py-0.5 rounded-full text-xs font-semibold">
+                    {course.level}
+                </span>
+                </div>
+                <p className="text-sm">{course.primary_description}</p>
+                <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-[#4F647A] mt-2 shrink-0">
+                <span>📚 {course.subject}</span>
+                <span>⏱ {course.weeks_to_complete || '–'} weeks</span>
+                <span>🌐 {course.language}</span>
+                </div>
+            </div>
+            </li>
+        ))}
+        </ul>
+    ),
+    },
+    {
+        title: 'Step 3: Job Article',
         content: (
         <ul className="space-y-4 text-[#003E85]">
-            {articles.map((article, index) => (
+            {articles.slice(0, 3).map((article, index) => (
             <li key={index} className="flex gap-3 items-start pb-3 border-b border-[#00000027] last:border-none">
             <svg className="w-2.5 h-2.5 mt-[8px] shadow-xl shadow-amber-900 text-[#FFD000] shrink-0" viewBox="0 0 10 10" fill="currentColor">
                 <circle cx="5" cy="5" r="5" />
@@ -82,52 +123,10 @@ const CareerTrainingSection = ({
         ),
     },
     {
-    title: 'Step 3: Certification',
-    content: (
-        <ul className="space-y-6 text-[#003E85]">
-        {courses.map((course, index) => (
-            <li key={index} className="flex gap-3 items-start border-b border-[#00000027] pb-6 last:border-none">
-            {/* Content */}
-            <div className="space-y-2">
-                {/* Title + Partner */}
-                <div>
-                <a
-                    href={course.marketing_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#003E85] text-xl font-bold hover:underline hover:text-[#002E60] transition-colors duration-200"
-                >
-                    {course.title}
-                </a>
-                <div className="text-md font-semibold text-[#4F647A] mt-1">
-                    by {course.partner}
-                </div>
-                <span className="bg-[#FFD000] text-[#003E85] px-2 py-0.5 rounded-full text-xs font-semibold">
-                    {course.level}
-                </span>
-
-                </div>
-
-                {/* Description */}
-                <p className="text-sm">{course.primary_description}</p>
-
-                {/* Meta info */}
-                <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-[#4F647A] mt-2 shrink-0">
-                <span>📚 {course.subject}</span>
-                <span>⏱ {course.weeks_to_complete || '–'} weeks</span>
-                <span>🌐 {course.language}</span>
-                </div>
-            </div>
-            </li>
-        ))}
-        </ul>
-    )
-    },
-    {
     title: 'Step 4: Job Vacancies',
     content: (
         <ul className="space-y-6 text-[#003E85]">
-        {jobs.map((job, index) => (
+        {jobs.slice(0, 3).map((job, index) => (
             <li
             key={index}
             className="border-b border-[#00000027] pb-6 last:border-none"

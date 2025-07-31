@@ -23,6 +23,7 @@ export interface CourseRecommendation {
     level: string;
     weeks_to_complete: string;
     language: string;
+    product: string;
 }
 
 export interface JobRecommendation {
