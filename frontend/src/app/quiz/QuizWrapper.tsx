@@ -77,7 +77,8 @@ const QuizWrapper: FC<QuizWrapperProps> = ({ answers, setAnswers }) => {
     };
 
     const handleSubmit = async () => {
-        const confirmSubmit = window.confirm("Are you sure you want to send the quiz now?");
+        console.log("Answers slice 60-63:", answers.slice(60, 64));
+        const confirmSubmit = window.confirm("Submit quiz now?\nYou can't edit answers after this.\n📸 Screenshot and save the links in the following results page so you don't have to retake it!");
         if (!confirmSubmit) {
             return; // kalau user cancel, hentikan proses submit
         }

@@ -40,28 +40,49 @@ const CareerTrainingSection = ({
         course.product?.toLowerCase() === 'program'
     );
 
+    const isHighSchool = typeof window !== "undefined" && localStorage.getItem("recommendations")
+        ? JSON.parse(localStorage.getItem("recommendations")!).in_highschool ?? true
+    : true;
+
     const sections = [
     {
-        title: 'Step 1: Academic Major',
-        content: (
+    title: 'Step 1: Academic Major',
+    content: (
         <ul className="space-y-3 text-[#003E85]">
-            {recommendations.slice(0, 3).map((item, index) => (
-            <li key={index} className="flex items-start gap-3 pb-3 border-b border-[#00000027] last:border-none">
-            <svg className="w-2.5 h-2.5 mt-2 shadow-xl shadow-amber-900 text-[#FFD000]" viewBox="0 0 10 10" fill="currentColor">
+        {recommendations.slice(0, 3).map((item, index) => (
+            <li
+            key={index}
+            className="flex items-start gap-3 pb-3 border-b border-[#00000027] last:border-none"
+            >
+            <svg
+                className="w-2.5 h-2.5 mt-2 shadow-xl shadow-amber-900 text-[#FFD000]"
+                viewBox="0 0 10 10"
+                fill="currentColor"
+            >
                 <circle cx="5" cy="5" r="5" />
             </svg>
             <div>
-                <strong>{toTitleCase(item.program)}</strong> at {toTitleCase(item.university)}
-                <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-0.5 rounded ml-1">
+                {isHighSchool ? (
+                <>
+                    <strong>{toTitleCase(item.university)}</strong>
+                    <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-0.5 rounded ml-1">
                     {item.rank === 999 ? '#999+' : `#${item.rank}`}
-                </span>
+                    </span>
+                </>
+                ) : (
+                <>
+                    <strong>{toTitleCase(item.program)}</strong> at {toTitleCase(item.university)}
+                    <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-0.5 rounded ml-1">
+                    {item.rank === 999 ? '#999+' : `#${item.rank}`}
+                    </span>
+                </>
+                )}
             </div>
             </li>
-
-            ))}
+        ))}
         </ul>
-        ),
-    },
+    ),
+},
     {
     title: 'Step 2: Training and Certification',
     content: (
@@ -175,6 +196,13 @@ const CareerTrainingSection = ({
 
     return (
     <div className="space-y-6">
+    {/* Conditional Title */}
+    <div className="mb-4 text-center text-[#003E85] text-sm sm:text-base font-medium">
+        {isHighSchool
+            ? "Recommendations based on your career interest."
+            : "Recommendations based on your career interest, as well as your current major, interests, and skills."
+        }
+    </div>
         {sections.map((section, index) => {
         const isOpen = openIndex === index;
         const arrowIcon = `/arrow-${isOpen ? 'up' : 'down'}-${isOpen ? 'black' : 'white'}.svg`;
