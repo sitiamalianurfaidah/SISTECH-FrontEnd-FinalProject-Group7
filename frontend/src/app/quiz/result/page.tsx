@@ -139,11 +139,11 @@ export default function ResultPage() {
                         </h1>
                     </div>
                     {/* Container untuk podium karier dengan SVG */}
-                    <div className="flex flex-col xl:flex-row justify-center items-end gap-10 xl:gap-0 h-150 xl:h-40 mt-5 xl:mt-10 mb-0">
+                    <div className="flex justify-center items-end gap-0 xl:gap-0 h-150 xl:h-40 mt-5 xl:mt-10 mb-0">
                     {/* Career 2 */}
                     {recommendations[1] && (
                         <button
-                        className={`w-[160px] h-[170px] rounded-t-2xl bg-[#003E85] text-white font-semibold transition duration-300 ${
+                        className={`w-[110px] xl:w-[160px] h-[120px] xl:h-[170px] text-xs xl:text-lg rounded-t-2xl bg-[#003E85] text-white font-semibold transition duration-300 ${
                             selectedCareerIndex === 1 ? 'opacity-100 scale-105' : 'opacity-80 hover:opacity-100'
                             
                         }`}
@@ -156,7 +156,7 @@ export default function ResultPage() {
                     {/* Career 1 */}
                     {recommendations[0] && (
                         <button
-                        className={`w-[160px] h-[200px] rounded-t-2xl bg-[#003E85] text-white font-bold transition duration-300 ${
+                        className={`w-[110px] xl:w-[160px] h-[150px] xl:h-[200px] text-sm xl:text-lg rounded-t-2xl bg-[#003E85] text-white font-bold transition duration-300 ${
                             selectedCareerIndex === 0 ? 'opacity-100 scale-105' : 'opacity-80 hover:opacity-100'
                         }`}
                         onClick={() => setSelectedCareerIndex(0)}
@@ -168,7 +168,7 @@ export default function ResultPage() {
                     {/* Career 3 */}
                     {recommendations[2] && (
                         <button
-                        className={`w-[160px] h-[150px] rounded-t-2xl bg-[#003E85] text-white font-semibold transition duration-300 ${
+                        className={`w-[110px] xl:w-[160px] h-[100px] xl:h-[150px] text-xs xl:text-lg rounded-t-2xl bg-[#003E85] text-white font-semibold transition duration-300 ${
                             selectedCareerIndex === 2 ? 'opacity-100 scale-105' : 'opacity-80 hover:opacity-100'
                         }`}
                         onClick={() => setSelectedCareerIndex(2)}
@@ -179,7 +179,7 @@ export default function ResultPage() {
                     </div>
                 </div>
                 {/* Description / Training Tabs Card */}
-                <div className="flex flex-col xl:flex-row justify-center mt-135 xl:mt-2">
+                <div className="flex flex-col xl:flex-row justify-center mt-15 xl:mt-2">
                 <div className="bg-white shadow-md rounded-full px-3 py-2 flex gap-2 xl:gap-3">
                     <button
                     onClick={() => setActiveTab('description')}
