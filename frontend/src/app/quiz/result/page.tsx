@@ -237,7 +237,7 @@ export default function ResultPage() {
                                     <div>
                                         <h2 className="text-3xl font-bold text-center text-[#002C5E] mb-0">Level</h2>
                                         <div className="p-6 rounded-2xl space-y-6 xl:space-y-3 text-center">
-                                            <div className="mt-1 text-md xl:text-lg text-gray-700">Fresh Graduate</div>
+                                            <div className="text-md xl:text-lg text-gray-700">Fresh Graduate</div>
                                             <div className="text-md xl:text-lg text-gray-700">Senior</div>
                                             <div className="text-md xl:text-lg text-gray-700">Specialist</div>
                                         </div>
