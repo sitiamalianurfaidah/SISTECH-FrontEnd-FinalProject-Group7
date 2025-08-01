@@ -197,7 +197,7 @@ const CareerTrainingSection = ({
     return (
     <div className="space-y-6">
     {/* Conditional Title */}
-    <div className="mb-4 text-center text-[#003E85] text-sm sm:text-base font-medium">
+    <div className="mb-8 text-center text-[#003E85] text-sm sm:text-base font-medium">
         {isHighSchool
             ? "Recommendations based on your career interest."
             : "Recommendations based on your career interest, as well as your current major, interests, and skills."

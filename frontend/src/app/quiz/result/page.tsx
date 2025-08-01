@@ -124,12 +124,12 @@ export default function ResultPage() {
                 {/* Header Section: "Top 3 Career Matching You!" dan Podium */}
                 <div className="relative w-full h-[380px] flex flex-col items-center justify-start bg-[#F5F7FA] pb-0">
                     {/* Lightning kiri */}
-                    <div className="absolute left-[-60] xl:left-[-200px] bottom-50 xl:bottom-30 z-0 shadow-outer">
+                    <div className="absolute left-[-85] xl:left-[-200px] bottom-50 xl:bottom-30 z-0 shadow-outer">
                     <Image src="/left-lightning.svg" alt="lightning" width={190} height={190} />
                     </div>
 
                     {/* Lightning kanan */}
-                    <div className="absolute right-[-60] xl:right-[-200px] bottom-65 xl:bottom-65 z-0">
+                    <div className="absolute right-[-75] xl:right-[-200px] bottom-63 xl:bottom-65 z-0">
                     <Image src="/right-lightning.svg" alt="lightning" width={180} height={180} />
                     </div>
                     {/* Teks "Top 3 Career Matching You!" */}
@@ -139,11 +139,11 @@ export default function ResultPage() {
                         </h1>
                     </div>
                     {/* Container untuk podium karier dengan SVG */}
-                    <div className="flex justify-center items-end gap-0 h-40 mt-10 mb-0">
+                    <div className="flex flex-col xl:flex-row justify-center items-end gap-10 xl:gap-0 h-150 xl:h-40 mt-5 xl:mt-10 mb-0">
                     {/* Career 2 */}
                     {recommendations[1] && (
                         <button
-                        className={`w-[160px] h-[150px] rounded-t-2xl bg-[#003E85] text-white font-semibold transition duration-300 ${
+                        className={`w-[160px] h-[170px] rounded-t-2xl bg-[#003E85] text-white font-semibold transition duration-300 ${
                             selectedCareerIndex === 1 ? 'opacity-100 scale-105' : 'opacity-80 hover:opacity-100'
                             
                         }`}
@@ -179,11 +179,11 @@ export default function ResultPage() {
                     </div>
                 </div>
                 {/* Description / Training Tabs Card */}
-                <div className="flex justify-center mt-5 xl:mt-2">
-                <div className="bg-white shadow-md rounded-full px-3 py-2 flex gap-3">
+                <div className="flex flex-col xl:flex-row justify-center mt-135 xl:mt-2">
+                <div className="bg-white shadow-md rounded-full px-3 py-2 flex gap-2 xl:gap-3">
                     <button
                     onClick={() => setActiveTab('description')}
-                    className={`px-20 py-2 rounded-full font-semibold transition duration-300
+                    className={`px-14 xl:px-20 py-1 xl:py-2 rounded-full font-semibold transition duration-300
                         ${activeTab === 'description'
                         ? 'bg-[#FFD000] text-[#000000]'
                         : 'text-[#000000] hover:bg-[#FFF5CC]'
@@ -193,7 +193,7 @@ export default function ResultPage() {
                     </button>
                     <button
                     onClick={() => setActiveTab('training')}
-                    className={`px-20 py-2 rounded-full font-semibold transition duration-300
+                    className={`px-14 xl:px-20 py-1 xl:py-2 rounded-full font-semibold transition duration-300
                         ${activeTab === 'training'
                         ? 'bg-[#FFD000] text-[#000000]'
                         : 'text-[#000000] hover:bg-[#FFF5CC]'
@@ -232,24 +232,24 @@ export default function ResultPage() {
                             </div>
 
                             {/* Level and Gaji per Bulan sections */}
-                                <div className="grid grid-cols-2 gap-8">
+                                <div className="grid grid-cols-2 gap-0">
                                     {/* Level */}
                                     <div>
                                         <h2 className="text-3xl font-bold text-center text-[#002C5E] mb-0">Level</h2>
-                                        <div className="p-6 rounded-2xl space-y-3 text-center">
-                                            <div className="text-lg text-gray-700">Fresh Graduate</div>
-                                            <div className="text-lg text-gray-700">Dokter Umum Senior</div>
-                                            <div className="text-lg text-gray-700">Dokter Spesialis</div>
+                                        <div className="p-6 rounded-2xl space-y-6 xl:space-y-3 text-center">
+                                            <div className="mt-1 text-md xl:text-lg text-gray-700">Fresh Graduate</div>
+                                            <div className="text-md xl:text-lg text-gray-700">Senior</div>
+                                            <div className="text-md xl:text-lg text-gray-700">Specialist</div>
                                         </div>
                                     </div>
 
                                     {/* Gaji per Bulan */}
                                     <div>
                                         <h2 className="text-3xl font-bold text-center text-[#002C5E] mb-0">Salary</h2>
-                                        <div className="p-6 rounded-2xl space-y-3 text-center">
-                                            <div className="text-lg text-gray-700">Rp6.000.000 - Rp10.000.000</div>
-                                            <div className="text-lg text-gray-700">Rp12.000.000 - Rp25.000.000</div>
-                                            <div className="text-lg text-gray-700">≥ Rp30.000.000</div>
+                                        <div className="p-6 rounded-2xl space-y-3 xl:space-y-3 text-center">
+                                            <div className="text-sm xl:text-lg text-gray-700">Rp6.000.000 - Rp10.000.000</div>
+                                            <div className="text-sm xl:text-lg text-gray-700">Rp12.000.000 - Rp25.000.000</div>
+                                            <div className="text-sm xl:text-lg text-gray-700">≥ Rp30.000.000</div>
                                         </div>
                                     </div>
                                 </div>
@@ -282,7 +282,7 @@ export default function ResultPage() {
                         )}
                         {/* Konten untuk tab Training (Placeholder) */}
                         {activeTab === 'training' && (
-                            <div className="bg-[#F5F7FA] p-6 rounded-2xl text-center">
+                            <div className="bg-[#F5F7FA] p-0 rounded-2xl text-center">
                             <CareerTrainingSection
                                 careerTitle={selectedCareer.title}
                                 recommendations={education}
