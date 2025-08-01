@@ -63,7 +63,7 @@ const Home = () => {
             </button>
 
             {/* Lightning kiri */}
-            <div className="absolute left-[-50px] xl:left-[230px] bottom-55 z-0">
+            <div className="absolute left-[-50px] xl:left-[230px] bottom-55 xl:bottom-10 z-0">
               <Image src="/left.svg" alt="lightning" width={190} height={190} />
             </div>
 
