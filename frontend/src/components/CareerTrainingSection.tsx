@@ -41,8 +41,8 @@ const CareerTrainingSection = ({
     );
 
     const isHighSchool = typeof window !== "undefined" && localStorage.getItem("recommendations")
-        ? JSON.parse(localStorage.getItem("recommendations")!).in_highschool ?? true
-    : true;
+        ? JSON.parse(localStorage.getItem("recommendations")!).in_highschool ?? false
+    : false;
 
     const sections = [
     {
